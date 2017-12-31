@@ -1,19 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the Bd69TablePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-bd69-table',
   templateUrl: 'bd69-table.html',
 })
 export class Bd69TablePage {
+
+  headerTitle = "Bảng xếp hạng"
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -22,4 +17,8 @@ export class Bd69TablePage {
     console.log('ionViewDidLoad Bd69TablePage');
   }
 
+  showMenu(){
+    console.log("let's show menu");
+    
+  }
 }
