@@ -638,3 +638,39 @@ $line-height: 20px;
 }
 
 // ===============================End Flex CSS=========================================
+// ===============================Bong Da 69=========================================
+.tabbar {
+    background-color: $appcolor !important;
+}
+
+.tab-button[aria-selected=true] {
+    ion-icon {
+        background: #FEFEFF;
+    }
+    border-bottom: 4px solid #4CDA64;
+}
+
+ion-icon {
+    &[class*="custom-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: #888C95;
+        width: 1em;
+        height: 1em;
+    }
+    // custom icons
+    &[class*="custom-icon1"] {
+        mask-image: url(../assets/football.png);
+    }
+    &[class*="custom-icon2"] {
+        mask-image: url(../assets/img/customicon2.svg);
+    }
+    &[class*="custom-icon3"] {
+        mask-image: url(../assets/img/customicon3.svg);
+    }
+}
+
+// ===============================End Bong Da 69=========================================

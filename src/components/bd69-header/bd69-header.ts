@@ -8,13 +8,18 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class Bd69HeaderComponent {
   @Input('title')headerTitle = "";
   @Output() showMenu = new EventEmitter();
+  @Output() clickNoti = new EventEmitter();
 
   constructor() {
-    // this.headerTitle = 'Lịch thi đấu';
   }
 
   onClickMenu(){
     this.showMenu.emit();
+  }
+
+  onClickNoti(){
+    console.log("onClickNoti");
+    
   }
 
 }

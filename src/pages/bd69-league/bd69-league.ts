@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -10,16 +10,17 @@ export class Bd69LeaguePage {
 
   headerTitle = "Thông tin giải đấu"
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public mEvents: Events,
+    public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Bd69LeaguePage');
+    console.log('ionViewDidLoad Bd69NewsFeedPage');
   }
 
-  showMenu(){
-    console.log("let's show menu");
-    
+  showMenu() {
+    this.mEvents.publish("showmenu");
   }
 
 }
