@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the Bd69TablePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FirebaseServiceProvider } from "../../providers/firebase-service/firebase-service";
 
 @IonicPage()
 @Component({
@@ -14,12 +9,36 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'bd69-table.html',
 })
 export class Bd69TablePage {
+  listLeague: any = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  page: any = "Bd69TableDetailPage";
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public mFirebaseService: FirebaseServiceProvider
+  ) {
+    // this.listLeague();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Bd69TablePage');
+  ionViewDidEnter() {
+    this.getLeague();
   }
-
+  getLeague() {
+    let listLeague;
+    let league = this.mFirebaseService.getCollection("tables").snapshotChanges().subscribe(data => {
+      listLeague = data.map(item => {
+        return {
+          id: item.payload.doc.id,
+          name: item.payload.doc.data().league_name,
+          page: "Bd69TableDetailPage"
+        }
+      });
+    });
+    setTimeout(() => {
+      this.getLeague = listLeague;
+      console.log(this.listLeague);
+    }, 1000);
+    
+  }
 }

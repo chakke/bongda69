@@ -1,0 +1,85 @@
+<div>
+  <div></div>
+  <!-- Bảng xếp hạng -->
+  <div>
+    <div class="big-font green-color a1-text-center a1-padding">Bảng xếp hạng</div>
+    <table class="a1-container a1-text-center">
+      <tr>
+        <th></th>
+        <th>Tên đội</th>
+        <th>Số trận</th>
+        <th>Hiệu số</th>
+        <th>Điểm</th>
+      </tr>
+      <tr class="gray-background" *ngFor="let item of listClub, let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.won}}</td>
+        <td>{{item.lost}}</td>
+        <td>{{item.points}}</td>
+      </tr>
+    </table>
+    <div class="small-font div-detail">
+      <div class="green-background btn-detail">
+        <span class="white-color">Xem bảng xếp hạng đầy đủ</span>
+        <button class="green-background">
+          <ion-icon class="white-color" name="ios-arrow-dropright-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Lịch thi đấu -->
+  <div>
+    <div class="big-font green-color a1-text-center a1-padding">Lịch thi đấu</div>
+    <table class="a1-container a1-text-center">
+      <tr>
+        <th>stt</th>
+        <th>Tên đội</th>
+        <th>Số trận</th>
+        <th>Hiệu số</th>
+        <th>Điểm</th>
+      </tr>
+      <tr class="gray-background">
+        <td>1</td>
+        <td>B-Gate</td>
+        <td>5</td>
+        <td>10</td>
+        <td>15</td>
+      </tr>
+    </table>
+    <div class="small-font div-detail">
+      <div class="green-background btn-detail">
+        <span class="white-color">Xem lịch thi đấu đầy đủ</span>
+        <button class="green-background">
+          <ion-icon class="white-color" name="ios-arrow-dropright-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- Danh sách vua phá lưới -->
+  <div>
+    <div class="big-font green-color a1-text-center a1-padding">Danh sách vua phá lưới</div>
+    <table class="a1-container a1-text-center">
+      <tr>
+        <th>stt</th>
+        <th>Tên cầu thủ</th>
+        <th>Tên đội</th>
+        <th>Số bàn thắng</th>
+      </tr>
+      <tr class="gray-background">
+        <td>1</td>
+        <td>B-Gate</td>
+        <td>B-Gate</td>
+        <td>5</td>
+      </tr>
+    </table>
+    <div class="small-font div-detail">
+      <div class="green-background btn-detail">
+        <span class="white-color">Xem danh sách đầy đủ</span>
+        <button class="green-background">
+          <ion-icon class="white-color" name="ios-arrow-dropright-outline"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
