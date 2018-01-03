@@ -16,6 +16,7 @@ export class Match extends FirebaseObject {
     stadium_id: string;
     /**Thời gian của trận đấu */
     duration: number;
+
     /**id của đội nhà */
     home_id: string;
     /**Logo của đội nhà */
@@ -33,6 +34,7 @@ export class Match extends FirebaseObject {
     away_name: string;
     /**Số bàn thắng đội khách */
     away_goal: number;
+    
     /**Trạng thái của trận đấu */
     state: number;
 }
