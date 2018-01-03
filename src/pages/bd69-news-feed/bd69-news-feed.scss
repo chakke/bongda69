@@ -1,1 +1,7 @@
-page-bd69-news-feed {}
+page-bd69-news-feed {
+    ion-content {
+        .scroll-content {
+            padding-top: $header-height;
+        }
+    }
+}
