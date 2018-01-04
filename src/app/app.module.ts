@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { TabsPage } from '../pages/tabs/tabs';
+import { ComponentsModule } from '../components/components.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -11,7 +12,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireDatabaseModule, AngularFireDatabase } from "angularfire2/database";
 import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule, AngularFirestore } from "angularfire2/firestore";
-
 import { SuperTabsModule } from "ionic2-super-tabs";
 import { FirebaseServiceProvider } from '../providers/firebase-service/firebase-service';
 
@@ -36,6 +36,7 @@ export const Config = {
     AngularFireModule.initializeApp(Config),    
     AngularFirestoreModule.enablePersistence(),
     SuperTabsModule.forRoot(),
+    ComponentsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

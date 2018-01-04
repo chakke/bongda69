@@ -1,13 +1,15 @@
-<ion-header>
+<ion-content no-bounce>
 
-  <ion-navbar>
-    <ion-title>Bảng xếp hạng các giải đấu</ion-title>
-  </ion-navbar>
+    <bd69-header [title]="headerTitle" (showMenu)="showMenu()"></bd69-header>
 
-</ion-header>
+    <div class="main-content">
+
+    </div>
 
 
 <ion-content>
+
+    <bd69-table></bd69-table>
   <!-- <div *ngIf="listLeague"*ngFor="let item of listLeague">aaa</div> -->
   <!-- <super-tabs>
       <super-tab *ngIf="listLeague"*ngFor="let item of listLeague" [root]="item.page" [title]="item.name" ></super-tab>

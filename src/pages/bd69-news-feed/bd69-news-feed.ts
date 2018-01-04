@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the Bd69NewsFeedPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,11 +8,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Bd69NewsFeedPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  headerTitle = "Bảng tin"
+
+  constructor(public navCtrl: NavController,
+    public mEvents: Events,
+    public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Bd69NewsFeedPage');
+  }
+
+  showMenu(){
+    this.mEvents.publish("showmenu");
   }
 
 }

@@ -1,0 +1,29 @@
+bd69-header {
+    .header-container {
+        height: $header-height;
+        width: 100%;
+        background-color: $appcolor;
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        .icon-container {
+            padding: 0 16px;
+            font-size: 1.8em;
+        }
+        .title-container {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        .red-dot {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 50%;
+            background-color: red;
+        }
+    }
+}

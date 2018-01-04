@@ -1,12 +1,11 @@
-<ion-header>
+<ion-content no-bounce>
 
-    <ion-navbar>
-        <ion-title>bd69-league</ion-title>
-    </ion-navbar>
+    <bd69-header [title]="headerTitle" (showMenu)="showMenu()"></bd69-header>
 
-</ion-header>
+    <!-- <div *ngFor="let item of listLeague">{{item.page}}</div> -->
 
-
-<ion-content padding>
+    <super-tabs scrollTabs (tabSelect)="onTabSelect($event)">
+        <super-tab *ngFor="let item of listLeague; let i = index" [root]="item.page" [title]="item.name" [rootParams]="{item: item, id: i}"></super-tab>
+    </super-tabs>
 
 </ion-content>

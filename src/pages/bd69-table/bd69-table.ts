@@ -22,7 +22,8 @@ export class Bd69TablePage {
   }
 
   ionViewDidEnter() {
-    this.getLeague();
+    // this.getLeague();
+    
   }
   getLeague() {
     let listLeague;

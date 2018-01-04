@@ -4,6 +4,7 @@ import { Bd69TablePage } from './bd69-table';
 import { SharedModule } from "../../app/shared.module";
 import { ComponentsModule } from "../../components/components.module";
 
+
 @NgModule({
   declarations: [
     Bd69TablePage,

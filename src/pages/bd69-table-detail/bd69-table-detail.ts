@@ -12,12 +12,17 @@ export class Bd69TableDetailPage {
   page1: any = "Page1Page";
   page2: any = "Page2Page";
   page3: any = "Page3Page";
-  
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.loadParams();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Bd69TableDetailPage');
   }
 
+  loadParams() {
+    let data = this.navParams.get("item");
+    console.log(data);
+
+  }
 }
