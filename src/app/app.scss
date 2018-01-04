@@ -688,7 +688,14 @@ $line-height: 20px;
 }
 /*Border 1px*/
 .border-bottom-1{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
     border-bottom: 1px solid #222;
+}
+/*No border*/
+.no-border{
+    border: none;
 }
 /*Select no border*/
 .no-border-select{

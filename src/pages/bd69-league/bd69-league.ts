@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 
+import { Subject } from 'rxjs/Subject';
 import { FirebaseServiceProvider } from "../../providers/firebase-service/firebase-service";
 
 @IonicPage()
@@ -11,6 +12,8 @@ import { FirebaseServiceProvider } from "../../providers/firebase-service/fireba
 export class Bd69LeaguePage {
 
   headerTitle = "Thông tin giải đấu";
+
+  item : string = "aaa";
 
   listLeague: any = [
     {
@@ -100,6 +103,7 @@ export class Bd69LeaguePage {
   ]
   listLeagues: any;
 
+  parentSubject:Subject<any> = new Subject();
 
   constructor(
     public navCtrl: NavController,
@@ -111,42 +115,34 @@ export class Bd69LeaguePage {
   }
 
   ionViewDidLoad() {
-    // this.getLeague();
-    // console.log("listLeagues", this.listLeague);
+    this.item = this.listLeague[0];
+    this.parentSubject.next(this.item);
     
-    
+  }
 
+  
+  notifyChildren(item: any ){
+    this.parentSubject.next(item);    
   }
 
   showMenu() {
     this.mEvents.publish("showmenu");
   }
 
-  getLeague() {
-    let listLeague;
-    let league = this.mFirebaseService.getCollection("tables").snapshotChanges().subscribe(data => {
-      listLeague = data.map(item => {
-        return {
-          id: item.payload.doc.id,
-          name: item.payload.doc.data().league_name,
-          page: "Bd69TableDetailPage"
-        }
-      });
-    });
-    setTimeout(() => {
-      this.listLeagues = listLeague;
-    }, 1000);
+  // getLeague() {
+  //   let listLeague;
+  //   let league = this.mFirebaseService.getCollection("tables").snapshotChanges().subscribe(data => {
+  //     listLeague = data.map(item => {
+  //       return {
+  //         id: item.payload.doc.id,
+  //         name: item.payload.doc.data().league_name,
+  //         page: "Bd69TableDetailPage"
+  //       }
+  //     });
+  //   });
+  //   setTimeout(() => {
+  //     this.listLeagues = listLeague;
+  //   }, 1000);
 
-  }
-  data: any;
-  list: Array<any> = [];
-  getParams(){
-    if(this.navParams.get("data")) this.data = this.navParams.get("data");
-  }
-  selectedIndex: number;
-  onTabSelect(ev: any) {
-    this.selectedIndex = ev.index;
-    console.log('Tab selected', 'Index: ' + ev.index, 'Unique ID: ' + ev.id);
-  }
-
+  // }
 }
