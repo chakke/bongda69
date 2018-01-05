@@ -16,7 +16,7 @@ export class Bd69FixturesPage {
     public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     this.mEvents.publish("menu:changed", "Bd69FixturesPage");
   }
 

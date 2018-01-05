@@ -34,6 +34,8 @@ export class MyApp {
     // set our app's pages
 
     this.events.subscribe("menu:changed", (page) => {
+      console.log(page);
+      
       this.pages.forEach(element => {
         if (page == element.component) {
           this.mSelectedMenuId = element.id;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 
 import { Subject } from 'rxjs/Subject';
 import { FirebaseServiceProvider } from "../../providers/firebase-service/firebase-service";
@@ -107,17 +107,19 @@ export class Bd69LeaguePage {
 
   constructor(
     public navCtrl: NavController,
+    public mEvents: Events,
     public navParams: NavParams,
     public mFirebaseService: FirebaseServiceProvider
   ) {
 
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
+    this.mEvents.publish("menu:changed", "Bd69LeaguePage");
     this.item = this.listLeague[0];
     this.parentSubject.next(this.item);
-    
   }
+
 
   
   notifyChildren(item: any ){
