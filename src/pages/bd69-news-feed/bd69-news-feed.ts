@@ -18,5 +18,8 @@ export class Bd69NewsFeedPage {
     console.log('ionViewDidLoad Bd69NewsFeedPage');
   }
 
+  onClickSmth(){
+    this.navCtrl.push("Bd69EditPostPage");
+  }
 
 }

@@ -2,7 +2,7 @@ bd69-header-clone {
     .header-container {
         height: $header-height;
         width: 100%;
-        background-color: $appcolor;
+        background-color: map-get($map: $app-colors, $key: app-color);
         color: white;
         position: absolute;
         top: 0;
@@ -12,13 +12,11 @@ bd69-header-clone {
             font-size: 2rem;
             font-weight: inherit;
         }
-        .title-container-left{
+        .title-container-left {
             font-size: 1.8rem;
             font-weight: inherit;
             color: gainsboro;
         }
-        .title-container-right{
-
-        }
+        .title-container-right {}
     }
 }

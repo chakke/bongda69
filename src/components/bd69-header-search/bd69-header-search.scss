@@ -1,4 +1,4 @@
-bd69-header {
+bd69-header-search {
     .header-container {
         height: $header-height;
         width: 100%;
@@ -13,9 +13,12 @@ bd69-header {
             padding: 0 16px;
             font-size: 1.8em;
         }
-        .title-container {
-            font-size: 1.2em;
-            font-weight: bold;
+        .search-container {
+            .search-bar {
+                background-color: map-get($map: $app-colors, $key: dark);
+                color: map-get($map: $text-colors, $key: gray);
+                border-radius: 10px;
+            }
         }
         .red-dot {
             width: 10px;
