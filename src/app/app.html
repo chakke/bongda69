@@ -7,11 +7,11 @@
         <div id="menu-name">
             <span>Nguyễn Đức Anh Anh Anh</span>
         </div>
-        <div class="menu-page-icon a3-container-center" *ngFor="let page of pages" [class.menu-page-icon-selected]="page.id==rootPage.id" (click)="openPage(page)">
+        <div class="menu-page-icon a3-container-center" *ngFor="let page of pages" [class.menu-page-icon-selected]="page.id==mSelectedMenuId" (click)="openPage(page)">
             <ion-icon name="{{page.icon}}"></ion-icon>
         </div>
     </ion-content>
 
 </ion-menu>
 
-<ion-nav [root]="rootPage.component" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

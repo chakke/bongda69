@@ -2,7 +2,6 @@ $header-height: 56px;
 $appcolor: #39414E;
 $toolbar-height: 56px;
 $statusbar-height: 20px;
-$header-height: 56px;
 $content-height: calc(100vh - 56px);
 $inputHeight: 40px;
 $segment-height: 50px;
@@ -638,6 +637,110 @@ $line-height: 20px;
 }
 
 // ===============================End Flex CSS=========================================
+.n-bold-text {
+    font-weight: bold;
+}
+
+// =======Other CSS==========
+
+/*Float*/
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+
+/*Font*/
+
+.big-font {
+    font-size: 2rem;
+}
+
+.normal-font {
+    font-size: 1.8rem;
+}
+
+.small-font {
+    font-size: 1.5rem;
+}
+
+
+/*Color*/
+
+.white-color {
+    color: white;
+}
+
+.danger-color {
+    color: red
+}
+
+.main-color {
+    color: green;
+}
+
+.green-color {
+    color: rgb(102, 214, 102)
+}
+
+
+/*Background Color*/
+
+.main-background {
+    background-color: azure;
+}
+
+.green-background {
+    background-color: chartreuse;
+}
+
+.white-background {
+    background-color: white;
+}
+
+.gray-background {
+    background-color: rgb(224, 215, 215);
+}
+
+
+/*Border 1px*/
+
+.border-bottom-1 {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #222;
+}
+
+
+/*No border*/
+
+.no-border {
+    border: none;
+}
+
+
+/*Select no border*/
+
+.no-border-select {
+    border: 0;
+}
+
+
+/*Box size*/
+
+.box-title {
+    height: 3rem;
+}
+
+.box-more {
+    height: 2rem
+}
+
 // ===============================Bong Da 69=========================================
 // @import "../theme/bd69-icons";
 ion-menu {

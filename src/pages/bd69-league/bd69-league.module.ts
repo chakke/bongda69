@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { Bd69LeaguePage } from './bd69-league';
+import { SharedModule } from "../../app/shared.module";
+
 
 import { ComponentsModule } from '../../components/components.module';
 
@@ -10,7 +12,8 @@ import { ComponentsModule } from '../../components/components.module';
   ],
   imports: [
     IonicPageModule.forChild(Bd69LeaguePage),
-    ComponentsModule
+    ComponentsModule,
+    SharedModule
   ],
 })
 export class Bd69LeaguePageModule {}
