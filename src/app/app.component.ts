@@ -9,11 +9,10 @@ import { TabsPage } from '../pages/tabs/tabs';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  // rootPage:any = TabsPage;
-  // rootPage:any  ="Bd69TablePage";
-  // rootPage:any  ="Bd69TableDetailPage";
+
+  rootPage: any = "NewsLocationPage";
   
-  rootPage: any = TabsPage;
+  // rootPage: any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, mEvents: Events) {
     platform.ready().then(() => {
