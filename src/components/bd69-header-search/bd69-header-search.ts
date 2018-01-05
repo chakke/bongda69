@@ -2,13 +2,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { MenuController } from 'ionic-angular';
 
 @Component({
-  selector: 'bd69-header',
-  templateUrl: 'bd69-header.html'
+  selector: 'bd69-header-search',
+  templateUrl: 'bd69-header-search.html'
 })
-export class Bd69HeaderComponent {
-  @Input('title')headerTitle = "";
+export class Bd69HeaderSearchComponent {
   @Output() notiClicked = new EventEmitter();
-
+  
   constructor(public mMenuController: MenuController) {
   }
 
@@ -17,8 +16,6 @@ export class Bd69HeaderComponent {
   }
 
   onClickNoti(){
-    this.notiClicked.emit("onClickNoti")
-    
+    this.notiClicked.emit("onClickNoti");
   }
-
 }

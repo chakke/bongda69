@@ -114,20 +114,18 @@ export class Bd69LeaguePage {
 
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
+    this.mEvents.publish("menu:changed", "Bd69LeaguePage");
     this.item = this.listLeague[0];
     this.parentSubject.next(this.item);
-    
   }
+
 
   
   notifyChildren(item: any ){
     this.parentSubject.next(item);    
   }
 
-  showMenu() {
-    this.mEvents.publish("showmenu");
-  }
 
   // getLeague() {
   //   let listLeague;

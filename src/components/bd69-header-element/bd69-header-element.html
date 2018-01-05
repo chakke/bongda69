@@ -1,0 +1,15 @@
+<div class="header-container a3-container a3-justify-between a3-items-center">
+    <div padding class="left-text" (click)="onClickClose()">
+        <span>{{leftText}}</span>
+    </div>
+    <div padding class="title-container">
+        <span>{{headerTitle}}</span>
+    </div>
+    <div padding *ngIf="!isToggle" class="right-text" (click)="onClickRightBtn()">
+        <span>{{rightText}}</span>
+    </div>
+    <!-- fix me -->
+    <div padding *ngIf="isToggle">
+
+    </div>
+</div>

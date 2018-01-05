@@ -1,8 +1,6 @@
 $header-height: 56px;
-$appcolor: #39414E;
 $toolbar-height: 56px;
 $statusbar-height: 20px;
-$header-height: 56px;
 $content-height: calc(100vh - 56px);
 $inputHeight: 40px;
 $segment-height: 50px;
@@ -643,22 +641,30 @@ $line-height: 20px;
 }
 
 // =======Other CSS==========
+
 /*Float*/
-.float-left{
+
+.float-left {
     float: left;
 }
-.float-right{
+
+.float-right {
     float: right;
 }
+
+
 /*Font*/
-.big-font{
+
+.big-font {
     font-size: 2rem;
 }
-.normal-font{
+
+.normal-font {
     font-size: 1.8rem;
 }
-.small-font{
-    font-size: 1.5rem;    
+
+.small-font {
+    font-size: 1.5rem;
 }
 .bold-font{
     font-weight: bold;
@@ -668,101 +674,154 @@ $line-height: 20px;
 }
 
 /*Color*/
-.white-color{
+
+.white-color {
     color: white;
 }
-.danger-color{
+
+.danger-color {
     color: red
 }
-.main-color{
+
+.main-color {
     color: green;
 }
-.green-color{
+
+.green-color {
     color: rgb(102, 214, 102)
 }
+
+
 /*Background Color*/
-.main-background{
+
+.main-background {
     background-color: azure;
 }
-.green-background{
+
+.green-background {
     background-color: chartreuse;
 }
-.white-background{
+
+.white-background {
     background-color: white;
 }
-.gray-background{
+
+.gray-background {
     background-color: rgb(224, 215, 215);
 }
+
+
 /*Border 1px*/
-.border-bottom-1{
+
+.border-bottom-1 {
     border-top: 0;
     border-left: 0;
     border-right: 0;
     border-bottom: 1px solid #222;
 }
+
+
 /*No border*/
-.no-border{
+
+.no-border {
     border: none;
 }
+
+
 /*Select no border*/
-.no-border-select{
+
+.no-border-select {
     border: 0;
 }
+
+
 /*Box size*/
-.box-title{
+
+.box-title {
     height: 3rem;
 }
-.box-more{
+
+.box-more {
     height: 2rem
 }
 
 // ===============================Bong Da 69=========================================
-.tabbar {
-    background-color: $appcolor !important;
+// @import "../theme/bd69-icons";
+ion-menu {
+    .menu-inner {
+        width: 30vw;
+    }
+    .scroll-content {
+        background-color: map-get($map: $app-colors, $key: app-color);
+    }
+    #menu-avatar-container {
+        width: 30vw;
+        height: 30vw;
+        padding: 16px;
+        #avatar {
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0px 0px 2px grey;
+        }
+    }
+    #menu-name {
+        padding: 0 4px;
+        font-size: .8em;
+        width: 100%;
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .menu-page-icon {
+        height: 20vw;
+        font-size: 2em;
+        color: white;
+    }
+    .menu-page-icon-selected {
+        background-color: map-get($map: $app-colors, $key: dark);
+        color: map-get($map: $text-colors, $key: lightgreen);
+    }
 }
 
-.tab-button {
-    min-height: 50px !important;
-}
-
-.tab-button[aria-selected=true] {
-    ion-icon {
-        background: #FEFEFF;
-    }
-    border-bottom: 4px solid #4CDA64;
-}
-
-ion-icon {
-    &[class*="custom-"] {
-        // Instead of using the font-based icons
-        // We're applying SVG masks
-        mask-size: contain;
-        -webkit-mask-size: contain;
-        mask-position: 50% 50%;
-        -webkit-mask-position: 50% 50%;
-        mask-repeat: no-repeat;
-        -webkit-mask-repeat: no-repeat;
-        background: #888C95;
-        width: 1em;
-        height: 1em;
-    }
-    // custom icons
-    &[class*="custom-icon1"] {
-        mask-image: url(../assets/football.png);
-    }
-    &[class*="custom-icon2"] {
-        mask-image: url(../assets/img/customicon2.svg);
-    }
-    &[class*="custom-icon3"] {
-        mask-image: url(../assets/img/customicon3.svg);
-    }
-}
-
+// ion-icon {
+//     &[class*="custom-"] {
+//         // Instead of using the font-based icons
+//         // We're applying SVG masks
+//         mask-size: contain;
+//         -webkit-mask-size: contain;
+//         mask-position: 50% 50%;
+//         -webkit-mask-position: 50% 50%;
+//         mask-repeat: no-repeat;
+//         -webkit-mask-repeat: no-repeat;
+//         background: #888C95;
+//         width: 1em;
+//         height: 1em;
+//     }
+//     // custom icons
+//     &[class*="custom-icon1"] {
+//         mask-image: url(../assets/football.png);
+//     }
+//     &[class*="custom-icon2"] {
+//         mask-image: url(../assets/img/customicon2.svg);
+//     }
+//     &[class*="custom-icon3"] {
+//         mask-image: url(../assets/img/customicon3.svg);
+//     }
+// }
 .main-content {
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    padding-top: $header-height;
+    padding-top: map-get($map: $config, $key: header-height);
+    background-color: #F0F0F0;
+    color: map-get($map: $app-colors, $key: gray);
+    .content-item {
+        background-color: white;
+        padding: 10px;
+    }
 }
 
 // ===============================End Bong Da 69=========================================

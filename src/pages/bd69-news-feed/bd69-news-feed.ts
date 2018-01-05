@@ -8,19 +8,20 @@ import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 })
 export class Bd69NewsFeedPage {
 
-  headerTitle = "Bảng tin"
-
   constructor(public navCtrl: NavController,
     public mEvents: Events,
     public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Bd69NewsFeedPage');
+  ionViewDidEnter() {
+    this.mEvents.publish("menu:changed", "Bd69NewsFeedPage");
   }
 
-  showMenu(){
-    this.mEvents.publish("showmenu");
+  onClickSmth(){
+    this.navCtrl.push("Bd69EditPostPage");
   }
 
+  onClickCs(){
+    this.navCtrl.push("NewsLocationPage");
+  }
 }

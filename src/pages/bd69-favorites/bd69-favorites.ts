@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 
-
 @IonicPage()
 @Component({
-  selector: 'page-bd69-fixtures',
-  templateUrl: 'bd69-fixtures.html',
+  selector: 'page-bd69-favorites',
+  templateUrl: 'bd69-favorites.html',
 })
-export class Bd69FixturesPage {
+export class Bd69FavoritesPage {
 
-  headerTitle = "Lịch thi đấu"
+  headerTitle = "Mục yêu thích"
 
   constructor(public navCtrl: NavController,
     public mEvents: Events,
@@ -17,10 +16,7 @@ export class Bd69FixturesPage {
   }
 
   ionViewDidEnter() {
-    this.mEvents.publish("menu:changed", "Bd69FixturesPage");
+    this.mEvents.publish("menu:changed", "Bd69FavoritesPage");
   }
 
-  showMenu() {
-    this.mEvents.publish("showmenu");
-  }
 }

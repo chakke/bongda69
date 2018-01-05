@@ -15,11 +15,8 @@ export class Bd69UserProfilePage {
     public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Bd69NewsFeedPage');
+  ionViewDidEnter() {
+    this.mEvents.publish("menu:changed", "Bd69UserProfilePage");
   }
 
-  showMenu(){
-    this.mEvents.publish("showmenu");
-  }
 }
