@@ -17,7 +17,7 @@ export class Bd69FixturesPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Bd69NewsFeedPage');
+    console.log('ionViewDidLoad Bd69FixturesPage');
   }
 
   showMenu() {

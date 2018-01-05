@@ -377,7 +377,6 @@ export class Bd69FixturesComponent {
 
           this.viewFixtures.push(newFixture);
         }
-
       });
     });
 

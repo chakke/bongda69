@@ -3,20 +3,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-bd69-league',
-  templateUrl: 'bd69-league.html',
+  selector: 'page-bd69-favorites',
+  templateUrl: 'bd69-favorites.html',
 })
-export class Bd69LeaguePage {
+export class Bd69FavoritesPage {
 
-  headerTitle = "Thông tin giải đấu"
+  headerTitle = "Mục yêu thích"
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Bd69LeaguePage');
+    console.log('ionViewDidLoad Bd69FavoritesPage');
   }
-
 
 }

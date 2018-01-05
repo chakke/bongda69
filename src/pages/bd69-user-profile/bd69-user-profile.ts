@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -11,7 +11,6 @@ export class Bd69UserProfilePage {
   headerTitle = "Thông tin người dùng"
 
   constructor(public navCtrl: NavController,
-    public mEvents: Events,
     public navParams: NavParams) {
   }
 
@@ -19,7 +18,4 @@ export class Bd69UserProfilePage {
     console.log('ionViewDidLoad Bd69NewsFeedPage');
   }
 
-  showMenu(){
-    this.mEvents.publish("showmenu");
-  }
 }

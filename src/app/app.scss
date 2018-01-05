@@ -639,6 +639,46 @@ $line-height: 20px;
 
 // ===============================End Flex CSS=========================================
 // ===============================Bong Da 69=========================================
+// @import "../theme/bd69-icons";
+ion-menu {
+    .menu-inner {
+        width: 30vw;
+    }
+    .scroll-content {
+        background-color: map-get($map: $colors, $key: appColor);
+    }
+    #menu-avatar-container {
+        width: 30vw;
+        height: 30vw;
+        padding: 16px;
+        #avatar {
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0px 0px 2px grey;
+        }
+    }
+    #menu-name {
+        padding: 0 4px;
+        font-size: .8em;
+        width: 100%;
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .menu-page-icon {
+        height: 20vw;
+        font-size: 2em;
+        color: white;
+    }
+    .menu-page-icon-selected {
+        background-color: #292F3A;
+        color: #4CD964;
+    }
+}
+
 .tabbar {
     background-color: $appcolor !important;
 }
@@ -654,32 +694,31 @@ $line-height: 20px;
     border-bottom: 4px solid #4CDA64;
 }
 
-ion-icon {
-    &[class*="custom-"] {
-        // Instead of using the font-based icons
-        // We're applying SVG masks
-        mask-size: contain;
-        -webkit-mask-size: contain;
-        mask-position: 50% 50%;
-        -webkit-mask-position: 50% 50%;
-        mask-repeat: no-repeat;
-        -webkit-mask-repeat: no-repeat;
-        background: #888C95;
-        width: 1em;
-        height: 1em;
-    }
-    // custom icons
-    &[class*="custom-icon1"] {
-        mask-image: url(../assets/football.png);
-    }
-    &[class*="custom-icon2"] {
-        mask-image: url(../assets/img/customicon2.svg);
-    }
-    &[class*="custom-icon3"] {
-        mask-image: url(../assets/img/customicon3.svg);
-    }
-}
-
+// ion-icon {
+//     &[class*="custom-"] {
+//         // Instead of using the font-based icons
+//         // We're applying SVG masks
+//         mask-size: contain;
+//         -webkit-mask-size: contain;
+//         mask-position: 50% 50%;
+//         -webkit-mask-position: 50% 50%;
+//         mask-repeat: no-repeat;
+//         -webkit-mask-repeat: no-repeat;
+//         background: #888C95;
+//         width: 1em;
+//         height: 1em;
+//     }
+//     // custom icons
+//     &[class*="custom-icon1"] {
+//         mask-image: url(../assets/football.png);
+//     }
+//     &[class*="custom-icon2"] {
+//         mask-image: url(../assets/img/customicon2.svg);
+//     }
+//     &[class*="custom-icon3"] {
+//         mask-image: url(../assets/img/customicon3.svg);
+//     }
+// }
 .main-content {
     width: 100%;
     height: 100%;
