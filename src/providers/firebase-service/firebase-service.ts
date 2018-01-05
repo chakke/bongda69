@@ -17,4 +17,8 @@ export class FirebaseServiceProvider {
   public getCollection(collection: string){
     return this.angularFirestore.collection(collection);
   }
+
+  public getCollectionOrderBy(collection: string, key: string){
+    return this.angularFirestore.collection(collection, ref => ref.orderBy(key));
+  }
 }

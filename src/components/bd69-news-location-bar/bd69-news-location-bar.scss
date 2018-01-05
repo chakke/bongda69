@@ -1,8 +1,19 @@
 bd69-news-location-bar {
-    .city{
-        width: 50%;
+    .location-bar{
+        background-color: map-get($map: $bd69Colors, $key: main-background);
+        width: 100%;
+        .city{
+            width: 50%;
+        }
+        .distric{
+            width: 50%;
+        }
     }
-    .distric{
-        width: 50%;
+    .select-loction{
+        width: 100%;
+        border-bottom: 1px solid map-get($map: $bd69Colors, $key: green-text);
+        color: map-get($map: $bd69Colors, $key: green-text);
+        background-color: map-get($map: $bd69Colors, $key: main-background);
     }
+    
 }

@@ -9,6 +9,7 @@ import { Bd69LeagueDsctComponent } from './bd69-league-dsct/bd69-league-dsct';
 import { Bd69HeaderCloneComponent } from './bd69-header-clone/bd69-header-clone';
 import { Bd69SearchBarComponent } from './bd69-search-bar/bd69-search-bar';
 import { Bd69NewsLocationBarComponent } from './bd69-news-location-bar/bd69-news-location-bar';
+import { Bd69NewsLocationListComponent } from './bd69-news-location-list/bd69-news-location-list';
 @NgModule({
 	declarations: [Bd69HeaderComponent,
     Bd69MenuToggleComponent,
@@ -18,7 +19,8 @@ import { Bd69NewsLocationBarComponent } from './bd69-news-location-bar/bd69-news
     Bd69LeagueDsctComponent,
     Bd69HeaderCloneComponent,
     Bd69SearchBarComponent,
-    Bd69NewsLocationBarComponent],
+    Bd69NewsLocationBarComponent,
+    Bd69NewsLocationListComponent],
 	imports: [IonicPageModule],
 	exports: [Bd69HeaderComponent,
     Bd69MenuToggleComponent,
@@ -28,6 +30,7 @@ import { Bd69NewsLocationBarComponent } from './bd69-news-location-bar/bd69-news
     Bd69LeagueDsctComponent,
     Bd69HeaderCloneComponent,
     Bd69SearchBarComponent,
-    Bd69NewsLocationBarComponent]
+    Bd69NewsLocationBarComponent,
+    Bd69NewsLocationListComponent]
 })
 export class ComponentsModule {}
