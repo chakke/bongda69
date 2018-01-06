@@ -18,11 +18,11 @@ export class MyApp {
   mSelectedMenuId: number = 1;
 
   pages: Array<{ id: number, icon: string, component: any }> = [
-    { id: 1, icon: 'ios-football-outline', component: "Bd69NewsFeedPage" },
-    { id: 2, icon: 'ios-football-outline', component: "Bd69FixturesPage" },
-    { id: 3, icon: 'ios-football-outline', component: "Bd69LeaguePage" },
-    { id: 4, icon: 'ios-football-outline', component: "Bd69FavoritesPage" },
-    { id: 5, icon: 'ios-football-outline', component: "Bd69UserProfilePage" },
+    { id: 1, icon: 'bd69-news', component: "Bd69NewsFeedPage" },
+    { id: 2, icon: 'bd69-livescore', component: "Bd69FixturesPage" },
+    { id: 3, icon: 'bd69-leaderboard', component: "Bd69LeaguePage" },
+    { id: 4, icon: 'bd69-bookmark', component: "Bd69FavoritesPage" },
+    { id: 5, icon: 'bd69-personal', component: "Bd69UserProfilePage" },
   ];;
 
   user: Observable<User>;

@@ -9,7 +9,7 @@
 [class^="icon-"],
 [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
+    font-family: 'icomoon';
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -32,15 +32,13 @@ $val) {
     }
 }
 
-@include makeIcon(menu,
+@include makeIcon(bookmark,
 "\e900");
 @include makeIcon(leaderboard,
-"\e904");
-@include makeIcon(bookmark,
 "\e905");
-@include makeIcon(personal,
+@include makeIcon(livescore,
 "\e906");
 @include makeIcon(news,
 "\e907");
-@include makeIcon(livescore,
+@include makeIcon(personal,
 "\e908");
