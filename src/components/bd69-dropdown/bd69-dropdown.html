@@ -1,0 +1,22 @@
+<div class="dropdown-container">
+    <div class="dropdown-title">
+        <span>{{title}}</span>
+    </div>
+    <div class="dropdown-select a1-relative" [class.after-first]="isGreen" (click)="onClickDropDown()">
+        <span>{{currentItem}}</span>
+        <div class="dropdown-icon a1-absolute a1-right">
+            <ion-icon name="ios-arrow-down-outline"></ion-icon>
+        </div>
+    </div>
+</div>
+<div id="backdrop" class="hidden" (click)="onClickClose()"></div>
+<div id="details" class="hidden">
+    <div class="arrow-up"></div>
+    <div class="details-content">
+        <div class="items-container">
+            <div class="details-item" *ngFor="let item of items; let i = index" [class.border-bottom]="i!=items.length-1" [class.no-padding-top]="i==0" [class.no-padding-bottom]="i==items.length-1" (click)="onClickItem(item)">
+                {{item}}
+            </div>
+        </div>
+    </div>
+</div>
