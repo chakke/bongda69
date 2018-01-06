@@ -1,24 +1,24 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 
-/**
- * Generated class for the Bd69NewsLocationListComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
+import { AppControllerProvider } from "../../providers/bongda69/app-controller";
+import { Stadium } from "../../providers/bongda69/classes/stadium";
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'bd69-news-location-list',
   templateUrl: 'bd69-news-location-list.html'
 })
 export class Bd69NewsLocationListComponent {
+  @Input('district-name') districtName = "aaa";
+  
+  mStadium: Observable<Stadium[]>;
+  constructor(
+    public mAppController: AppControllerProvider
+  ) {
+  }
 
-  list: any = [
-    { name: 'aaaaaaa', age: 11 },
-    { name: 'bbbbbbbb', age: 12 },
-    { name: 'ccccccccc', age: 13 }
-  ];
-
-  constructor() {
+  ngAfterViewInit(){
+    this.mStadium = this.mAppController.getStadiumByDistrictId("003");
   }
 
 }

@@ -1,3 +1,4 @@
+@import "../theme/bd69-icons";
 $header-height: 56px;
 $toolbar-height: 56px;
 $statusbar-height: 20px;
@@ -666,12 +667,15 @@ $line-height: 20px;
 .small-font {
     font-size: 1.5rem;
 }
-.bold-font{
+
+.bold-font {
     font-weight: bold;
 }
-.font-weight-normal{
+
+.font-weight-normal {
     font-weight: normal;
 }
+
 
 /*Color*/
 
@@ -746,7 +750,6 @@ $line-height: 20px;
 }
 
 // ===============================Bong Da 69=========================================
-// @import "../theme/bd69-icons";
 ion-menu {
     .menu-inner {
         width: 30vw;
@@ -777,7 +780,7 @@ ion-menu {
     }
     .menu-page-icon {
         height: 20vw;
-        font-size: 2em;
+        font-size: 1.6em;
         color: white;
     }
     .menu-page-icon-selected {
@@ -816,8 +819,8 @@ ion-menu {
     height: 100%;
     overflow-y: auto;
     padding-top: map-get($map: $config, $key: header-height);
-    background-color: #F0F0F0;
-    color: map-get($map: $app-colors, $key: gray);
+    background-color: map-get($map: $app-colors, $key: gray);
+    color: map-get($map: $app-colors, $key: dark);
     .content-item {
         background-color: white;
         padding: 10px;
