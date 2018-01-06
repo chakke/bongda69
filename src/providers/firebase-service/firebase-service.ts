@@ -20,6 +20,10 @@ export class FirebaseServiceProvider {
     return this.angularFirestore.collection(collection);
   }
 
+  public getCollectionOrderBy(collection: string, key: string) {
+    return this.angularFirestore.collection(collection, ref => ref.orderBy(key));
+  }
+
   getUser(): Observable<any> {
     if (this.isUseFakeData) {
       return new Observable(observer => {

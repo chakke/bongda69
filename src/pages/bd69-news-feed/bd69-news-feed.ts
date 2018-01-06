@@ -21,4 +21,7 @@ export class Bd69NewsFeedPage {
     this.navCtrl.push("Bd69EditPostPage");
   }
 
+  onClickCs(){
+    this.navCtrl.push("NewsLocationPage");
+  }
 }
