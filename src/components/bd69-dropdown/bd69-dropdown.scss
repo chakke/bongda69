@@ -1,0 +1,88 @@
+bd69-dropdown {
+    width: 100%;
+    .dropdown-container {
+        padding: 10px;
+        .dropdown-title {
+            font-weight: bold;
+        }
+        .dropdown-select {
+            border-bottom: 1px solid;
+            border-bottom-color: map-get($map: $text-colors, $key: gray);
+            padding: 6px 0;
+            color: map-get($map: $text-colors, $key: gray);
+            transition: all .6s;
+            .dropdown-icon {
+                top: 6px;
+            }
+        }
+        .after-first {
+            color: map-get($map: $text-colors, $key: lightgreen);
+            border-bottom-color: map-get($map: $text-colors, $key: lightgreen);
+        }
+    }
+    #backdrop {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(black, .25);
+        transition: all .4s;
+    }
+    #details {
+        padding: 0 10px;
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+        margin-top: -10px;
+        .arrow-up {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid rgba(white, 1);
+            margin-left: 20px;
+        }
+        .details-content {
+            width: 100%;
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+            pointer-events: all;
+            font-size: .9em;
+            .items-container {
+                width: 100%;
+                max-height: 50vh;
+                overflow-y: auto;
+            }
+            .details-item {
+                padding: 10px 0;
+            }
+            .border-bottom {
+                border-bottom: 1px solid;
+                border-bottom-color: map-get($map: $app-colors, $key: gray);
+            }
+            .no-padding-top {
+                padding-top: 0 !important;
+            }
+            .no-padding-bottom {
+                padding-bottom: 0 !important;
+            }
+        }
+    }
+    .hidden {
+        pointer-events: none !important;
+        background-color: rgba(black, 0) !important;
+        .arrow-up {
+            pointer-events: none !important;
+            border-bottom-color: rgba(white, 0) !important;
+        }
+        .details-content {
+            height: 0 !important;
+            width: 0 !important;
+            padding: 0 !important;
+            pointer-events: none !important;
+            background-color: rgba(white, 0) !important;
+        }
+    }
+}
