@@ -4,6 +4,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Events } from 'ionic-angular';
 
+import { AppControllerProvider } from '../providers/bongda69/app-controller';
+
+import { User } from '../providers/base/classes/user';
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -20,11 +25,14 @@ export class MyApp {
     { id: 5, icon: 'ios-football-outline', component: "Bd69UserProfilePage" },
   ];;
 
+  user: Observable<User>;
+
   constructor(
     public events: Events,
     platform: Platform,
     public menu: MenuController,
     statusBar: StatusBar,
+    public mAppControllerProvider: AppControllerProvider,
     splashScreen: SplashScreen) {
     platform.ready().then(() => {
       statusBar.styleDefault();
@@ -33,9 +41,13 @@ export class MyApp {
 
     // set our app's pages
 
+    this.user = this.mAppControllerProvider.getUser();
+    console.log(this.user);
+    
+
     this.events.subscribe("menu:changed", (page) => {
       console.log(page);
-      
+
       this.pages.forEach(element => {
         if (page == element.component) {
           this.mSelectedMenuId = element.id;
