@@ -5,8 +5,7 @@
     </div>
     <div>
       <select class="no-border select-loction small-font">
-        <option value="">Hà Nội</option>
-        <option value="">Lào Cai</option>
+        <option *ngFor="let item of listProvince" value="">{{item.name}}</option>
       </select>
     </div>
 

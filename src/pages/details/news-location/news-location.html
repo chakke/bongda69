@@ -1,9 +1,9 @@
 <ion-content>
-    <bd69-header-element></bd69-header-element>
+    <bd69-header-element [title]="headerTitle"></bd69-header-element>
 
     <div class="main-content">
-        <bd69-search-bar class="search-bar"></bd69-search-bar>
-        <bd69-news-location-bar></bd69-news-location-bar>
+        <bd69-search-bar></bd69-search-bar>
+        <bd69-news-location-bar [listProvince]="listProvince"></bd69-news-location-bar>
         <bd69-news-location-list class="list-item"></bd69-news-location-list>
         <bd69-news-location-list></bd69-news-location-list>
         
