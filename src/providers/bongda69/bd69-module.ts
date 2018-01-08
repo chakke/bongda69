@@ -4,9 +4,10 @@ import { Observable } from 'rxjs/Observable';
 import { FirebaseServiceProvider } from '../firebase-service/firebase-service';
 
 import { User } from '../base/classes/user';
+import { Match } from '../bongda69/classes/match';
 
 @Injectable()
-export class AppControllerProvider {
+export class Bd69Module {
 
   constructor(public firebaseService: FirebaseServiceProvider
   ) {
@@ -23,7 +24,21 @@ export class AppControllerProvider {
         account_state: elm.account_state
       }
     })
+  }
 
+  // getMatchesByLeagueId(id: string): Observable<Match[]> {
+  //   return this.firebaseService.getMatchesByLeagueId(id).map(elm => {
+  //     return {
+  //       []
+  //     }
+  //   })
+  // }
+
+  getSomething(){
+    this.firebaseService.getMatchesByLeagueId("id").map(elm => {
+      console.log("elm",elm);
+      
+    });
   }
 
 }

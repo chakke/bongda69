@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Events } from 'ionic-angular';
 
-import { AppControllerProvider } from '../providers/bongda69/app-controller';
+import { Bd69Module } from '../providers/bongda69/bd69-module';
 
 import { User } from '../providers/base/classes/user';
 import { Observable } from 'rxjs/Observable';
@@ -32,7 +32,7 @@ export class MyApp {
     platform: Platform,
     public menu: MenuController,
     statusBar: StatusBar,
-    public mAppControllerProvider: AppControllerProvider,
+    public mBd69Module: Bd69Module,
     splashScreen: SplashScreen) {
     platform.ready().then(() => {
       statusBar.styleDefault();
@@ -41,7 +41,7 @@ export class MyApp {
 
     // set our app's pages
 
-    this.user = this.mAppControllerProvider.getUser();
+    this.user = this.mBd69Module.getUser();
     console.log(this.user);
     
 

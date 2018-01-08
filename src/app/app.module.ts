@@ -13,7 +13,7 @@ import { AngularFireModule } from "angularfire2";
 import { AngularFirestoreModule, AngularFirestore } from "angularfire2/firestore";
 import { SuperTabsModule } from "ionic2-super-tabs";
 import { FirebaseServiceProvider } from '../providers/firebase-service/firebase-service';
-import { AppControllerProvider } from '../providers/bongda69/app-controller';
+import { Bd69Module } from '../providers/bongda69/bd69-module';
 
 export const Config = {
   apiKey: "AIzaSyCCHTqgkVOX5e8TS_-0Ez6ZBY0RGr4fzhw",
@@ -46,7 +46,7 @@ export const Config = {
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     FirebaseServiceProvider,
-    AppControllerProvider,
+    Bd69Module,
   ]
 })
 export class AppModule { }

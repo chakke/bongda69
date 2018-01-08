@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { Bd69Module } from '../../providers/bongda69/bd69-module';
 
 import { Fixtures } from '../../providers/bongda69/classes/fixtures';
 import { Match } from '../../providers/bongda69/classes/match';
@@ -32,12 +34,13 @@ class PrivateFixtures {
   templateUrl: 'bd69-fixtures.html'
 })
 export class Bd69FixturesComponent {
+  @Input('league-id')leagueId = "";
 
   viewFixtures: Array<PrivateFixtures> = [];
 
   fixtures: Array<Fixtures> = [];
 
-  constructor() {
+  constructor(public mBd69Module: Bd69Module) {
     // fake matches
     let matches = [
       {
@@ -327,6 +330,11 @@ export class Bd69FixturesComponent {
     this.fixtures.push(ngheleague2);
     console.log(this.fixtures);
 
+  }
+
+  ngAfterViewInit(){
+    console.log("ngAfterViewInit");
+    this.mBd69Module.getSomething();
   }
 
   ngOnInit() {
