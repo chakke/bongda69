@@ -1,0 +1,13 @@
+<div class="content">
+  <div class="item" *ngFor="let league of list_league">
+    <div class="a1-width-15 a1-text-center">
+      <img [src]="league.logo">
+    </div>
+    <div class="a1-width-80">
+      <span>{{league.name}}</span>
+    </div>
+    <div class="a1-width-5 a1-text-center">
+      <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+    </div>
+  </div>
+</div>

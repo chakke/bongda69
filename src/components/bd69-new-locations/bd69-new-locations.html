@@ -1,0 +1,29 @@
+<div>
+  <div class="search-bar">
+    <input class="input-search" placeholder="Tìm kiếm">
+  </div>
+  <div class="dropdown-bar">
+    <div class="city a1-padding">
+      <div>
+        <span class="small-font font-weight-normal">Thành phố</span>
+      </div>
+      <div>
+        <select class="no-border select-loction small-font" [(ngModel)]="province" (ngModelChange)="getItemProvince($event)">
+          <option *ngFor="let province of listProvince | async" [ngValue]="province.code">{{province.name}}</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="distric a1-padding">
+      <div>
+        <span class="small-font font-weight-normal">Quận/Huyện</span>
+      </div>
+      <div>
+        <select class="no-border select-loction small-font" [(ngModel)]="district" (ngModelChange)="getItemDistrict($event)">
+          <option *ngFor="let district of listDistric | async" [ngValue]="district.name">{{district.name}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+</div>

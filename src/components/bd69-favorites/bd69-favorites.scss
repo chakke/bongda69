@@ -1,0 +1,29 @@
+bd69-favorites {
+    .box{
+        margin-top: 1rem;
+        background-color: white;
+        .title{
+            padding:1rem;
+            font-weight: bold;
+        }
+        .item{
+            padding: 1rem;
+            margin-left: 1rem;
+            border-top: 1px solid #F0F0F0;
+            display: flex;            
+        }
+        
+    }
+}
+.display-flex{
+    display: flex;
+}
+.a1-width-35{
+    width: 35%;
+}
+.a1-width-55{
+    width: 55%;
+}
+.font-weight-bold{
+    font-weight: bold;
+}

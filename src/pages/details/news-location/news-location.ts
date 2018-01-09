@@ -22,6 +22,13 @@ export class NewsLocationPage {
   listProvince: Observable<Province[]>;
   listDistric: Observable<Province[]>;
 
+  province = "Thành phố";
+  province_index= 0;
+  district = "Quận/Huyện";
+  district_index = 0;
+  leagues = ["Hà Nội", "Nghệ league 2017", "Forumbongda Fairplay Cup 2017", "Hạng Trung Fair Play Cup 2017", "VCK Giải Vô Địch Sân 7 TP.HN 2017", "FORUMBONGDA RESPECT 2017"]
+  leagues1 = ["Hà Nội", "Nghệ league 2017", "Forumbongda Fairplay Cup 2017", "Hạng Trung Fair Play Cup 2017", "VCK Giải Vô Địch Sân 7 TP.HN 2017", "FORUMBONGDA RESPECT 2017"]
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -35,6 +42,13 @@ export class NewsLocationPage {
   }
   ionViewDidLoad() {
     console.log(this.listProvince);
+  }
+  onChooseProvince(event){
+    console.log(event);
+  }
+  onChooseDistrict(event){
+    console.log(event);
+    
   }
 
 
