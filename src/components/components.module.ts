@@ -11,6 +11,7 @@ import { Bd69DropdownComponent } from './bd69-dropdown/bd69-dropdown';
 import { Bd69FavoritesComponent } from './bd69-favorites/bd69-favorites';
 import { Bd69LeaguesComponent } from './bd69-leagues/bd69-leagues';
 import { Bd69NewLocationsComponent } from './bd69-new-locations/bd69-new-locations';
+import { Bd69ListClubsComponent } from './bd69-list-clubs/bd69-list-clubs';
 @NgModule({
     declarations: [
         Bd69HeaderComponent,
@@ -23,7 +24,8 @@ import { Bd69NewLocationsComponent } from './bd69-new-locations/bd69-new-locatio
         Bd69DropdownComponent,
         Bd69FavoritesComponent,
     Bd69LeaguesComponent,
-    Bd69NewLocationsComponent],
+    Bd69NewLocationsComponent,
+    Bd69ListClubsComponent],
     imports: [IonicPageModule],
     exports: [
         Bd69HeaderComponent,
@@ -36,6 +38,7 @@ import { Bd69NewLocationsComponent } from './bd69-new-locations/bd69-new-locatio
         Bd69DropdownComponent,
         Bd69FavoritesComponent,
     Bd69LeaguesComponent,
-    Bd69NewLocationsComponent]
+    Bd69NewLocationsComponent,
+    Bd69ListClubsComponent]
 })
 export class ComponentsModule { }

@@ -1,0 +1,34 @@
+bd69-list-clubs {
+    .club-container{
+        display: flex;
+        padding: 0.5rem;
+        background-color: white;
+        margin-top: 1rem;
+        .logo{
+            width: 25%;
+            padding: 0.5rem;
+            .div-logo{
+                height: 100%;
+            }
+        }
+        .title{
+            padding:0.5rem;
+            width: 70%;
+            line-height: 2.4rem;
+            .club-name{
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            .member{
+                display: flex; 
+            }
+            .leader-name{
+                display: flex; 
+            }
+        }
+        .btn-detail{
+            width: 5%;
+            font-size: 2rem;
+        }
+    }
+}

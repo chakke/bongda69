@@ -1,0 +1,27 @@
+<div class="club-container" *ngFor="let club of listClub">
+  <div class="logo a1-width-20">
+    <div class=" div-logo a3-container-center">
+      <img [src]="club.logo">
+    </div>
+  </div>
+  <div class="title">
+    <div class="club-name">
+      <span>{{club.name}}</span>
+    </div>
+    <div class="member">
+      <div class="a3-container-center a1-width-10">
+        <img src="/assets/icon/club/users.png">
+      </div>
+      <span>{{club.member}} Thành viên</span>
+    </div>
+    <div class="leader-name">
+      <div class="a3-container-center a1-width-10">
+        <img src="/assets/icon/club/phone.png">
+      </div>
+      <span>{{club.leader}}</span>
+    </div>
+  </div>
+  <div class="btn-detail a3-container a3-items-top">
+    <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+  </div>
+</div>
