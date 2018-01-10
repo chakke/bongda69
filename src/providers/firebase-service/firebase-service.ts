@@ -44,7 +44,205 @@ export class FirebaseServiceProvider {
     }
   }
 
-  getMatchesByLeagueId(id: string): Observable<any>{
+  getLeaguesInfo(): Observable<any> {
+
+    if (this.isUseFakeData) {
+      return new Observable(observer => {
+        setTimeout(() => {
+          observer.next({
+            leagues: [
+              {
+                firebase_id: "",
+                /**id của giải*/
+                id: "0",
+                /**Tên giải */
+                name: "Nghệ league 2017",
+                /**Thời gian bắt đầu */
+                time_start: 0,
+                /**Ngày kết thúc */
+                time_end: 0,
+                /**Ảnh backdrop của giải, tương đương với cover trong profile */
+                cover: "",
+                /**Logo của giải */
+                logo: "",
+                /**Slogan của giải */
+                slogan: "",
+                /**Mô tả của giải */
+                description: "",
+                /**Trạng thái của giải */
+                state: "",
+                /**Danh sách sân bóng tổ chức giải */
+                stadium_ids: [],
+                /**Các nhà tài trợ */
+                donor_ids: []
+              },
+              {
+                firebase_id: "",
+                /**id của giải*/
+                id: "1",
+                /**Tên giải */
+                name: "Forumbongda Fairplay Cup 2017",
+                /**Thời gian bắt đầu */
+                time_start: 0,
+                /**Ngày kết thúc */
+                time_end: 0,
+                /**Ảnh backdrop của giải, tương đương với cover trong profile */
+                cover: "",
+                /**Logo của giải */
+                logo: "",
+                /**Slogan của giải */
+                slogan: "",
+                /**Mô tả của giải */
+                description: "",
+                /**Trạng thái của giải */
+                state: "",
+                /**Danh sách sân bóng tổ chức giải */
+                stadium_ids: [],
+                /**Các nhà tài trợ */
+                donor_ids: []
+              },
+              {
+                firebase_id: "",
+                /**id của giải*/
+                id: "2",
+                /**Tên giải */
+                name: "Hạng Trung Fair Play Cup 2017",
+                /**Thời gian bắt đầu */
+                time_start: 0,
+                /**Ngày kết thúc */
+                time_end: 0,
+                /**Ảnh backdrop của giải, tương đương với cover trong profile */
+                cover: "",
+                /**Logo của giải */
+                logo: "",
+                /**Slogan của giải */
+                slogan: "",
+                /**Mô tả của giải */
+                description: "",
+                /**Trạng thái của giải */
+                state: "",
+                /**Danh sách sân bóng tổ chức giải */
+                stadium_ids: [],
+                /**Các nhà tài trợ */
+                donor_ids: []
+              },
+              {
+                firebase_id: "",
+                /**id của giải*/
+                id: "3",
+                /**Tên giải */
+                name: "VCK Giải Vô Địch Sân 7 TP.HN 2017",
+                /**Thời gian bắt đầu */
+                time_start: 0,
+                /**Ngày kết thúc */
+                time_end: 0,
+                /**Ảnh backdrop của giải, tương đương với cover trong profile */
+                cover: "",
+                /**Logo của giải */
+                logo: "",
+                /**Slogan của giải */
+                slogan: "",
+                /**Mô tả của giải */
+                description: "",
+                /**Trạng thái của giải */
+                state: "",
+                /**Danh sách sân bóng tổ chức giải */
+                stadium_ids: [],
+                /**Các nhà tài trợ */
+                donor_ids: []
+              },
+              {
+                firebase_id: "",
+                /**id của giải*/
+                id: "4",
+                /**Tên giải */
+                name: "FORUMBONGDA RESPECT 2017",
+                /**Thời gian bắt đầu */
+                time_start: 0,
+                /**Ngày kết thúc */
+                time_end: 0,
+                /**Ảnh backdrop của giải, tương đương với cover trong profile */
+                cover: "",
+                /**Logo của giải */
+                logo: "",
+                /**Slogan của giải */
+                slogan: "",
+                /**Mô tả của giải */
+                description: "",
+                /**Trạng thái của giải */
+                state: "",
+                /**Danh sách sân bóng tổ chức giải */
+                stadium_ids: [],
+                /**Các nhà tài trợ */
+                donor_ids: []
+              },
+              {
+                firebase_id: "",
+                /**id của giải*/
+                id: "5",
+                /**Tên giải */
+                name: "Hanoi Elevent League 2017",
+                /**Thời gian bắt đầu */
+                time_start: 0,
+                /**Ngày kết thúc */
+                time_end: 0,
+                /**Ảnh backdrop của giải, tương đương với cover trong profile */
+                cover: "",
+                /**Logo của giải */
+                logo: "",
+                /**Slogan của giải */
+                slogan: "",
+                /**Mô tả của giải */
+                description: "",
+                /**Trạng thái của giải */
+                state: "",
+                /**Danh sách sân bóng tổ chức giải */
+                stadium_ids: [],
+                /**Các nhà tài trợ */
+                donor_ids: []
+              },
+            ]
+          });
+        }, 2000);
+      });
+    }
+  }
+
+  getLeagueById(id: string): Observable<any> {
+    if (this.isUseFakeData) {
+      return new Observable(observer => {
+        setTimeout(() => {
+          observer.next({
+            firebase_id: "",
+            /**id của giải*/
+            id: id,
+            /**Tên giải */
+            name: "Hanoi Elevent League",
+            /**Thời gian bắt đầu */
+            time_start: 0,
+            /**Ngày kết thúc */
+            time_end: 0,
+            /**Ảnh backdrop của giải, tương đương với cover trong profile */
+            cover: "",
+            /**Logo của giải */
+            logo: "",
+            /**Slogan của giải */
+            slogan: "",
+            /**Mô tả của giải */
+            description: "",
+            /**Trạng thái của giải */
+            state: 1,
+            /**Danh sách sân bóng tổ chức giải */
+            stadium_ids: [],
+            /**Các nhà tài trợ */
+            donor_ids: []
+          })
+        }, 1000);
+      })
+    }
+  }
+
+  getMatchesByLeagueId(id: string): Observable<any> {
     if (this.isUseFakeData) {
       return new Observable(observer => {
         setTimeout(() => {
@@ -58,7 +256,7 @@ export class FirebaseServiceProvider {
                 name: "",
                 /**Mô tả của trận đấu */
                 description: "",
-        
+
                 /**Thời gian diễn ra trận đấu, tính theo milliseconds */
                 time: 1513580400000,
                 /**Số phút của trận đấu */
@@ -67,7 +265,7 @@ export class FirebaseServiceProvider {
                 stadium_id: ",",
                 /**Thời gian của trận đấu */
                 duration: 0,
-        
+
                 /**id của đội nhà */
                 home_id: "congdonghatinh",
                 /**Logo của đội nhà */
@@ -76,7 +274,7 @@ export class FirebaseServiceProvider {
                 home_name: "Cộng đồng Hà Tĩnh",
                 /**Số bàn thắng đội chủ nhà */
                 home_goal: 1,
-        
+
                 /**id đội khách */
                 away_id: "lagianghonglinh",
                 /**logo đội khách */
@@ -85,7 +283,7 @@ export class FirebaseServiceProvider {
                 away_name: "La Giang Hồng Lĩnh",
                 /**Số bàn thắng đội khách */
                 away_goal: 4,
-        
+
                 /**Trạng thái của trận đấu */
                 state: 2,
               }, {
@@ -96,7 +294,7 @@ export class FirebaseServiceProvider {
                 name: "",
                 /**Mô tả của trận đấu */
                 description: "",
-        
+
                 /**Thời gian diễn ra trận đấu, tính theo milliseconds */
                 time: 1513582200000,
                 /**Số phút của trận đấu */
@@ -105,7 +303,7 @@ export class FirebaseServiceProvider {
                 stadium_id: ",",
                 /**Thời gian của trận đấu */
                 duration: 0,
-        
+
                 /**id của đội nhà */
                 home_id: "xungheindex",
                 /**Logo của đội nhà */
@@ -114,7 +312,7 @@ export class FirebaseServiceProvider {
                 home_name: "Nghệ +",
                 /**Số bàn thắng đội chủ nhà */
                 home_goal: 1,
-        
+
                 /**id đội khách */
                 away_id: "tanky",
                 /**logo đội khách */
@@ -123,7 +321,7 @@ export class FirebaseServiceProvider {
                 away_name: "Tân Kỳ",
                 /**Số bàn thắng đội khách */
                 away_goal: 2,
-        
+
                 /**Trạng thái của trận đấu */
                 state: 2,
               }, {
@@ -134,7 +332,7 @@ export class FirebaseServiceProvider {
                 name: "",
                 /**Mô tả của trận đấu */
                 description: "",
-        
+
                 /**Thời gian diễn ra trận đấu, tính theo milliseconds */
                 time: 1513582200000,
                 /**Số phút của trận đấu */
@@ -143,7 +341,7 @@ export class FirebaseServiceProvider {
                 stadium_id: ",",
                 /**Thời gian của trận đấu */
                 duration: 0,
-        
+
                 /**id của đội nhà */
                 home_id: "vinhcity",
                 /**Logo của đội nhà */
@@ -152,7 +350,7 @@ export class FirebaseServiceProvider {
                 home_name: "Vinh City",
                 /**Số bàn thắng đội chủ nhà */
                 home_goal: 1,
-        
+
                 /**id đội khách */
                 away_id: "xungheindex",
                 /**logo đội khách */
@@ -161,7 +359,7 @@ export class FirebaseServiceProvider {
                 away_name: "Xứ Nghệ Index",
                 /**Số bàn thắng đội khách */
                 away_goal: 3,
-        
+
                 /**Trạng thái của trận đấu */
                 state: 2,
               }, {
@@ -172,7 +370,7 @@ export class FirebaseServiceProvider {
                 name: "",
                 /**Mô tả của trận đấu */
                 description: "",
-        
+
                 /**Thời gian diễn ra trận đấu, tính theo milliseconds */
                 time: 1517900400000,
                 /**Số phút của trận đấu */
@@ -181,7 +379,7 @@ export class FirebaseServiceProvider {
                 stadium_id: ",",
                 /**Thời gian của trận đấu */
                 duration: 0,
-        
+
                 /**id của đội nhà */
                 home_id: "congdonghatinh",
                 /**Logo của đội nhà */
@@ -190,7 +388,7 @@ export class FirebaseServiceProvider {
                 home_name: "Cộng đồng Hà Tĩnh",
                 /**Số bàn thắng đội chủ nhà */
                 home_goal: 0,
-        
+
                 /**id đội khách */
                 away_id: "vinhcity",
                 /**logo đội khách */
@@ -199,7 +397,7 @@ export class FirebaseServiceProvider {
                 away_name: "Vinh City",
                 /**Số bàn thắng đội khách */
                 away_goal: 0,
-        
+
                 /**Trạng thái của trận đấu */
                 state: 0,
               }, {
@@ -210,7 +408,7 @@ export class FirebaseServiceProvider {
                 name: "",
                 /**Mô tả của trận đấu */
                 description: "",
-        
+
                 /**Thời gian diễn ra trận đấu, tính theo milliseconds */
                 time: 1517904600000,
                 /**Số phút của trận đấu */
@@ -219,7 +417,7 @@ export class FirebaseServiceProvider {
                 stadium_id: ",",
                 /**Thời gian của trận đấu */
                 duration: 0,
-        
+
                 /**id của đội nhà */
                 home_id: "xungheindex",
                 /**Logo của đội nhà */
@@ -228,16 +426,16 @@ export class FirebaseServiceProvider {
                 home_name: "Nghệ +",
                 /**Số bàn thắng đội chủ nhà */
                 home_goal: 0,
-        
+
                 /**id đội khách */
-                away_id: "lagianghonglinh",
+                away_id: "vinhcity",
                 /**logo đội khách */
-                away_logo: "http://img.forumbongda.com//home/Avt?id=993&type=football&thumb=150",
+                away_logo: "http://img.forumbongda.com//home/Avt?id=1109&type=football&thumb=150",
                 /** tên đội khách */
-                away_name: "La Giang Hồng Lĩnh",
+                away_name: "Vinh City",
                 /**Số bàn thắng đội khách */
                 away_goal: 0,
-        
+
                 /**Trạng thái của trận đấu */
                 state: 0,
               }, {
@@ -248,7 +446,7 @@ export class FirebaseServiceProvider {
                 name: "",
                 /**Mô tả của trận đấu */
                 description: "",
-        
+
                 /**Thời gian diễn ra trận đấu, tính theo milliseconds */
                 time: 1517900400000,
                 /**Số phút của trận đấu */
@@ -257,7 +455,7 @@ export class FirebaseServiceProvider {
                 stadium_id: ",",
                 /**Thời gian của trận đấu */
                 duration: 0,
-        
+
                 /**id của đội nhà */
                 home_id: "congdonghatinh",
                 /**Logo của đội nhà */
@@ -266,16 +464,17 @@ export class FirebaseServiceProvider {
                 home_name: "Cộng đồng Hà Tĩnh",
                 /**Số bàn thắng đội chủ nhà */
                 home_goal: 0,
-        
+
                 /**id đội khách */
-                away_id: "vinhcity",
+                away_id: "lagianghonglinh",
                 /**logo đội khách */
-                away_logo: "http://img.forumbongda.com//home/Avt?id=1109&type=football&thumb=150",
+                away_logo: "http://img.forumbongda.com//home/Avt?id=993&type=football&thumb=150",
                 /** tên đội khách */
-                away_name: "Vinh City",
+                away_name: "La Giang Hồng Lĩnh",
                 /**Số bàn thắng đội khách */
                 away_goal: 0,
-        
+                
+
                 /**Trạng thái của trận đấu */
                 state: 0,
               }, {
@@ -286,7 +485,7 @@ export class FirebaseServiceProvider {
                 name: "",
                 /**Mô tả của trận đấu */
                 description: "",
-        
+
                 /**Thời gian diễn ra trận đấu, tính theo milliseconds */
                 time: 1517904600000,
                 /**Số phút của trận đấu */
@@ -295,7 +494,7 @@ export class FirebaseServiceProvider {
                 stadium_id: ",",
                 /**Thời gian của trận đấu */
                 duration: 0,
-        
+
                 /**id của đội nhà */
                 home_id: "xungheindex",
                 /**Logo của đội nhà */
@@ -304,7 +503,7 @@ export class FirebaseServiceProvider {
                 home_name: "Nghệ +",
                 /**Số bàn thắng đội chủ nhà */
                 home_goal: 0,
-        
+
                 /**id đội khách */
                 away_id: "lagianghonglinh",
                 /**logo đội khách */
@@ -313,7 +512,7 @@ export class FirebaseServiceProvider {
                 away_name: "La Giang Hồng Lĩnh",
                 /**Số bàn thắng đội khách */
                 away_goal: 0,
-        
+
                 /**Trạng thái của trận đấu */
                 state: 0,
               }

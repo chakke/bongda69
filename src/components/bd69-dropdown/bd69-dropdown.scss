@@ -6,6 +6,7 @@ bd69-dropdown {
             font-weight: bold;
         }
         .dropdown-select {
+            min-height: 2em;
             border-bottom: 1px solid;
             border-bottom-color: map-get($map: $text-colors, $key: gray);
             padding: 6px 0;

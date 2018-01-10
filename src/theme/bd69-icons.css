@@ -39,10 +39,12 @@ $val) {
 @include makeIcon(bookmark,
 "\e900");
 @include makeIcon(leaderboard,
-"\e905");
+"\e901");
 @include makeIcon(livescore,
-"\e906");
+"\e902");
 @include makeIcon(news,
-"\e907");
-@include makeIcon(personal,
-"\e908");
+"\e903");
+@include makeIcon(notification,
+"\e904");
+@include makeIcon(setting,
+"\e905");

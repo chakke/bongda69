@@ -2,5 +2,39 @@
   *** LỊCH THI ĐẤU ***  
 -->
 <div>
-    {{text}}
+    <div class="title" *ngIf="title.length > 0">
+        <span>{{title}}</span>
+    </div>
+    <div class="item-container" *ngFor="let item of viewFixtures.items; let i = index">
+        <div class="time"><span>{{item.timeStr}}</span></div>
+        <div class="match-container">
+            <div class="match a3-container a3-items-center" *ngFor="let match of item.matches;let j = index" [class.n-border-bottom]="i<viewFixtures.items.length-1&&j==item.matches.length-1">
+                <div class="team a3-container a3-justify-end a3-items-center">
+                    <div class="home-name">
+                        <span>{{match.home_name}}</span>
+                    </div>
+                    <div class="logo">
+                        <img src={{match.home_logo}}>
+                    </div>
+                </div>
+                <div class="result gray-result" *ngIf="match.state==0">
+                    <span>{{convertTime(match.time)}}</span>
+                </div>
+
+                <div class="result green-result" *ngIf="match.state==2">
+                    <span>{{match.home_goal}}</span>
+                    <span> - </span>
+                    <span>{{match.away_goal}}</span>
+                </div>
+                <div class="team a3-container a3-justify-start a3-items-center">
+                    <div class="logo">
+                        <img src={{match.away_logo}}>
+                    </div>
+                    <div class="away-name">
+                        <span>{{match.away_name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

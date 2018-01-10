@@ -1,3 +1,53 @@
 bd69-fixtures {
-
+    .title {
+        font-weight: bold;
+    }
+    .item-container {
+        .time {
+            font-size: .9em;
+            color: map-get($map: $text-colors, $key: gray);
+            padding: 6px 0;
+        }
+        .match-container {
+            padding: 0 6px;
+            .match {
+                border-top: 1px solid;
+                border-color: map-get($map: $app-colors, $key: gray);
+                min-height: 2em;
+                padding: 4px 0;
+                .team {
+                    width: 43%;
+                    .logo {
+                        width: 1.5em;
+                        min-width: 1.5em;
+                        margin: 0 4%;
+                    }
+                    .home-name {
+                        text-align: right;
+                    }
+                    .guest-name {
+                        text-align: left;
+                    }
+                }
+                .result {
+                    width: 14%;
+                    text-align: center;
+                    white-space: nowrap;
+                    color: white;
+                    font-size: .9em;
+                    padding: 2px 0;
+                }
+                .gray-result {
+                    background-color: #B7B7B7;
+                }
+                .green-result {
+                    background-color: #4EDA63;
+                }
+            }
+            .n-border-bottom {
+                border-bottom: 1px solid;
+                border-color: map-get($map: $app-colors, $key: gray);
+            }
+        }
+    }
 }
