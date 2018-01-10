@@ -7,6 +7,7 @@ import { MenuController } from 'ionic-angular';
 })
 export class Bd69HeaderComponent {
   @Input('title')headerTitle = "";
+  @Input('button-right') button_right ="";
   @Output() notiClicked = new EventEmitter();
 
   constructor(public mMenuController: MenuController) {

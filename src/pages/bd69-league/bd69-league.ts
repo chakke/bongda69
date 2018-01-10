@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 
-import { Subject } from 'rxjs/Subject';
 import { FirebaseServiceProvider } from "../../providers/firebase-service/firebase-service";
 
 @IonicPage()
@@ -12,14 +11,15 @@ import { FirebaseServiceProvider } from "../../providers/firebase-service/fireba
 export class Bd69LeaguePage {
 
   headerTitle = "Thông tin giải đấu";
+  search_icon = "ios-search-outline";
 
   item : string = "aaa";
 
   listLeague: any = [
     {
       id: "hel2017",
-      page: "Bd69TableDetailPage",
-      name: "HN Elevent League 2017",
+      logo: "/assets/icon/favorite/club4.png",
+      name: "VCK Giải vô địch sân 7 TP.HN 2017",
       club: [
         {
           id: "aia_fc",
@@ -46,8 +46,8 @@ export class Bd69LeaguePage {
     },
     {
       id: "hpl2017",
-      page: "Bd69TableDetailPage",
-      name: "HN Phủi League 2017",
+      logo: "/assets/icon/favorite/club3.png",
+      name: "Nghệ League 2017",
       club: [
         {
           id: "thanhxuan_fc",
@@ -74,8 +74,8 @@ export class Bd69LeaguePage {
     },
     {
       id: "dnl2017",
-      page: "Bd69TableDetailPage",
-      name: "Đà Nẵng League 2017",
+      logo: "/assets/icon/favorite/club1.png",
+      name: "Vinh Phuc League S1",
       club: [
         {
           id: "lala_fc",
@@ -100,10 +100,65 @@ export class Bd69LeaguePage {
         },
       ]
     },
+    {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club4.png",
+      name: "Yên Thành Open 2017",
+      club: []
+    },{
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club3.png",
+      name: "FORUMBONGDA RESPECT 2017",
+      club: []
+    },{
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club4.png",
+      name: "KV3 - Vòng loại giải vô địch sân 7 Hà Nội",
+      club: []
+    },{
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club3.png",
+      name: "Cup 93 - 96 HN",
+      club: []
+    },{
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club1.png",
+      name: "Vinh Phuc League S1",
+      club: []
+    },{
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club2.png",
+      name: "Yên Thành Open 2017",
+      club: []
+    },{
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club1.png",
+      name: "FORUMBONGDA RESPECT 2017",
+      club: []
+    },{
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club2.png",
+      name: "Liên Minh Cup 2018",
+      club: []
+    },{
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club1.png",
+      name: "Yên Thành Open 2017",
+      club: []
+    },{
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club2.png",
+      name: "FORUMBONGDA RESPECT 2017",
+      club: []
+    },{
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club2.png",
+      name: "FORUMBONGDA RESPECT 2018",
+      club: []
+    },
   ]
   listLeagues: any;
 
-  parentSubject:Subject<any> = new Subject();
 
   constructor(
     public navCtrl: NavController,
@@ -117,13 +172,11 @@ export class Bd69LeaguePage {
   ionViewDidEnter() {
     this.mEvents.publish("menu:changed", "Bd69LeaguePage");
     this.item = this.listLeague[0];
-    this.parentSubject.next(this.item);
   }
 
 
   
   notifyChildren(item: any ){
-    this.parentSubject.next(item);    
   }
 
 

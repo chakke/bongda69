@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs/Observable';
 
 import { FirebaseServiceProvider } from '../firebase-service/firebase-service';
@@ -7,7 +8,9 @@ import { User } from '../base/classes/user';
 import { Match } from '../bongda69/classes/match';
 import { Fixtures } from '../bongda69/classes/fixtures';
 import { League } from './classes/league';
-import { Subscriber } from 'rxjs/Subscriber';
+import { Province } from "../bongda69/classes/province";
+import { District } from "../bongda69/classes/district";
+import { Stadium } from "../bongda69/classes/stadium";
 
 @Injectable()
 export class Bd69Module {
@@ -79,4 +82,19 @@ export class Bd69Module {
     });
   }
 
+  getProvince(): Observable<Province[]> {
+    return this.firebaseService.getProvince();
+  }
+
+  getDistrict(province_code): Observable<District[]>{
+    return this.firebaseService.getDistrict(province_code);
+  }
+
+  getStadiumByProvinceId(province_code): Observable<Stadium[]>{
+    return this.firebaseService.getStadiumByProvinceId(province_code);
+  }
+
+  getStadiumByDistrictId(district_code): Observable<Stadium[]>{
+    return this.firebaseService.getStadiumByDistrictId(district_code);
+  }
 }

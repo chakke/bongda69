@@ -1,27 +1,9 @@
 <ion-content no-bounce class="gray-background">
 
-    <bd69-header [title]="headerTitle"></bd69-header>
+    <bd69-header [title]="headerTitle" [button-right]="search_icon"></bd69-header>
 
     <div class="main-content">
-        <div>
-            <div>
-                <label for="">Theo giải đấu</label>
-            </div>
-            <div>
-                <select class="border-bottom-1 a1-width-100 small-font a1-padding-lef main-color" [(ngModel)]="item" (ngModelChange)="notifyChildren($event)">
-                        <option *ngFor="let item of listLeague" [ngValue]="item">{{item.name}}</option>
-                    </select>
-            </div>
-        </div>
-        <div class="a1-padding-bottom">
-            <bd69-league-bxh [parentSubject]="parentSubject"></bd69-league-bxh>
-        </div>
-        <div class="a1-padding-bottom">
-            <bd69-league-ltd [parentSubject]="parentSubject"></bd69-league-ltd>
-        </div>
-        <div>
-            <bd69-league-dsct [parentSubject]="parentSubject"></bd69-league-dsct>
-        </div>
+        <bd69-leagues [list-league]="listLeague"></bd69-leagues>
     </div>
 
 </ion-content>

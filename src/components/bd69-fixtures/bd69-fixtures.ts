@@ -53,11 +53,9 @@ class PrivateFixtures {
       }
 
       if (isNew) {
-
         let newItem = new FixturesItem(match.time);
 
         newItem.matches.push(match);
-
         this.items.push(newItem);
       }
     }
@@ -89,20 +87,17 @@ export class Bd69FixturesComponent {
   mFixtures: Observable<Fixtures>;
 
   constructor(public mBd69Module: Bd69Module) {
-
   }
 
   ngAfterViewInit() {
-    this.getFixtures();
+    if(this.leagueId){
+      this.getFixtures();
+    }
   }
-
 
   getFixtures() {
     this.mBd69Module.getMatchesByLeagueId(this.leagueId).subscribe(data => {
-
       this.viewFixtures.onSetUpMatches(data.matches);
-      console.log(this.viewFixtures);
-
     });
   }
 

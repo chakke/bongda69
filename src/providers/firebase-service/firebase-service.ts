@@ -24,6 +24,25 @@ export class FirebaseServiceProvider {
     return this.angularFirestore.collection(collection, ref => ref.orderBy(key));
   }
 
+  getProvince(): Observable<any> {
+    return this.angularFirestore.collection("provinces").valueChanges();
+  }
+
+  getDistrict(province_code:string): Observable<any>{
+    return this.angularFirestore.collection("districts",ref => ref.where("province_code","==",province_code))
+    .valueChanges();
+  }
+
+  getStadiumByProvinceId(province_code: string): Observable<any> {
+    return this.angularFirestore.collection("stadiums",ref => ref.where("province_id","==",province_code))
+    .valueChanges();
+  }
+
+  getStadiumByDistrictId(district_code: string): Observable<any> {
+    return this.angularFirestore.collection("stadiums", ref => ref.where("district_id","==",district_code))
+    .valueChanges();
+  }
+
   getUser(): Observable<any> {
     if (this.isUseFakeData) {
       return new Observable(observer => {

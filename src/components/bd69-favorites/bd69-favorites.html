@@ -1,0 +1,48 @@
+<div class="box">
+  <div class="title">
+    <span>Giải đấu</span>
+  </div>
+  <div class="item" *ngFor="let league of giai_dau">
+    <div class="a1-width-90">
+      <span>{{league.name}}</span>
+    </div>
+    <div class="float-right">
+        <img src="/assets/icon/favorite/star.png">
+    </div>
+  </div>
+</div>
+<div class="box">
+  <div class="title">
+    <span>Cầu thủ</span>
+  </div>
+
+  <div class="item" *ngFor="let player of cau_thu">
+    <div class="a1-width-35 font-weight-bold">
+      <span>{{player.name}}</span>
+    </div>
+    <div class="a1-width-55 display-flex">
+      <div class="a1-width-20">
+          <img [src]="player.club_logo">
+      </div>
+      <div>
+        <span>{{player.club_name}}</span>
+      </div>
+    </div>
+    <div class="float-right">
+        <img src="/assets/icon/favorite/star.png">
+    </div>
+  </div>
+</div>
+<div class="box">
+  <div class="title">
+    <span>Sân bóng</span>
+  </div>
+  <div class="item" *ngFor="let stadium of san_bong">
+    <div class="a1-width-90">
+      <span>{{stadium.name}}</span>
+    </div>
+    <div class="float-right">
+      <img src="/assets/icon/favorite/star.png">
+    </div>
+  </div>
+</div>

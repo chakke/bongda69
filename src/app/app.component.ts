@@ -22,8 +22,8 @@ export class MyApp {
     { id: 2, icon: 'bd69-livescore', component: "Bd69FixturesPage" },
     { id: 3, icon: 'bd69-leaderboard', component: "Bd69LeaguePage" },
     { id: 4, icon: 'bd69-bookmark', component: "Bd69FavoritesPage" },
-    { id: 4, icon: 'bd69-notification', component: "Bd69FavoritesPage" },
-    { id: 5, icon: 'bd69-setting', component: "Bd69SettingsPage" },
+    { id: 5, icon: 'bd69-notification', component: "Bd69NotificationPage" },
+    { id: 6, icon: 'bd69-setting', component: "Bd69SettingsPage" },
   ];;
 
   user: Observable<User>;

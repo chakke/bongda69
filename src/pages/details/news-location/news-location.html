@@ -1,12 +1,22 @@
 <ion-content>
-    <bd69-header-element></bd69-header-element>
+    <bd69-header-element [title]="headerTitle"></bd69-header-element>
 
     <div class="main-content">
-        <bd69-search-bar class="search-bar"></bd69-search-bar>
-        <bd69-news-location-bar></bd69-news-location-bar>
-        <bd69-news-location-list class="list-item"></bd69-news-location-list>
-        <bd69-news-location-list></bd69-news-location-list>
-        
+        <!-- <bd69-search-bar></bd69-search-bar>
+        <div style="display:flex">
+            <bd69-dropdown [title]="province" [items]="leagues" [currentIndex]="province_index" (itemChosen)="onChooseProvince($event)"></bd69-dropdown>
+            <bd69-dropdown [title]="district" [items]="leagues1" [currentIndex]="district_index" (itemChosen)="onChooseDistrict($event)"></bd69-dropdown>
+        </div> -->
+
+        <!-- <bd69-news-location-bar [listProvince]="listProvince"></bd69-news-location-bar> -->
+
+        <!-- <bd69-news-location-list class="list-item"></bd69-news-location-list> -->
+        <!-- <bd69-news-location-list></bd69-news-location-list> -->
+
+        <bd69-new-locations ></bd69-new-locations>
+
     </div>
+
+    <!-- <div *ngFor="let item of mProvinces | async">{{item.name}}</div> -->
 
 </ion-content>

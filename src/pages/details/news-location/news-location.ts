@@ -3,6 +3,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { FirebaseServiceProvider } from "../../../providers/firebase-service/firebase-service";
 
+import { Province } from "../../../providers/bongda69/classes/province";
+import { District } from "../../../providers/bongda69/classes/district";
+import { Observable } from 'rxjs/Observable';
+
+import { Bd69Module } from "../../../providers/bongda69/bd69-module";
+
 @IonicPage()
 @Component({
   selector: 'page-news-location',
@@ -10,44 +16,40 @@ import { FirebaseServiceProvider } from "../../../providers/firebase-service/fir
 })
 export class NewsLocationPage {
 
+  mProvinces: Observable<Province[]>;
+
+  headerTitle = "Chọn sân";
+  listProvince: Observable<Province[]>;
+  listDistric: Observable<Province[]>;
+
+  province = "Thành phố";
+  province_index= 0;
+  district = "Quận/Huyện";
+  district_index = 0;
+  leagues = ["Hà Nội", "Nghệ league 2017", "Forumbongda Fairplay Cup 2017", "Hạng Trung Fair Play Cup 2017", "VCK Giải Vô Địch Sân 7 TP.HN 2017", "FORUMBONGDA RESPECT 2017"]
+  leagues1 = ["Hà Nội", "Nghệ league 2017", "Forumbongda Fairplay Cup 2017", "Hạng Trung Fair Play Cup 2017", "VCK Giải Vô Địch Sân 7 TP.HN 2017", "FORUMBONGDA RESPECT 2017"]
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public mFirebaseService: FirebaseServiceProvider
+    public mFirebaseService: FirebaseServiceProvider,
+    public mAppController: Bd69Module
   ) {
   }
 
+  ngAfterViewInit() {
+    this.listProvince = this.mAppController.getProvince();
+  }
   ionViewDidLoad() {
-    // this.getStadium();
+    console.log(this.listProvince);
+  }
+  onChooseProvince(event){
+    console.log(event);
+  }
+  onChooseDistrict(event){
+    console.log(event);
+    
   }
 
-  getStadium() {
-    let listStadium;
-    let stadium = this.mFirebaseService.getCollection("stadiums").snapshotChanges().subscribe(data => {
-      listStadium = data.map(item => {
-        return {
-          name: item.payload.doc.data().name
-        }
-      });
-    });
-    let listProvince;
-    let province = this.mFirebaseService.getCollectionOrderBy("stadiums", "province_name").snapshotChanges().subscribe(data => {
-      listProvince = data.map(item => {
-        return {
-          provinceName: item.payload.doc.data().province_name
-        }
-      });
-      let list = [{ a: "h" }, { a: "h" }, { a: "b" }, { a: "b" }];
-      let listProvinceFilter: any;
-      for (let i = 0; i < list.length; i++) {
-        for (let ii = i + 1; i < list.length; i++) {
-          if (list[i].a == list[ii].a) {
-            console.log(list[ii]);
-          }
-        }
-
-      }
-    })
-  }
 
 }
