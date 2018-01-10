@@ -4,9 +4,9 @@
         <div id="menu-avatar-container">
             <div id="avatar"></div>
         </div>
-        <div id="menu-name">
+        <!-- <div id="menu-name">
             <span>{{(user|async)?.name}}</span>
-        </div>
+        </div> -->
         <div class="menu-page-icon a3-container-center" *ngFor="let page of pages" [class.menu-page-icon-selected]="page.id==mSelectedMenuId" (click)="openPage(page)">
             <ion-icon name="{{page.icon}}"></ion-icon>
         </div>

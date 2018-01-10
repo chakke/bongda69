@@ -7,7 +7,7 @@ import { Province } from "../../../providers/bongda69/classes/province";
 import { District } from "../../../providers/bongda69/classes/district";
 import { Observable } from 'rxjs/Observable';
 
-import { AppControllerProvider } from "../../../providers/bongda69/app-controller";
+import { Bd69Module } from "../../../providers/bongda69/bd69-module";
 
 @IonicPage()
 @Component({
@@ -33,7 +33,7 @@ export class NewsLocationPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public mFirebaseService: FirebaseServiceProvider,
-    public mAppController: AppControllerProvider
+    public mAppController: Bd69Module
   ) {
   }
 

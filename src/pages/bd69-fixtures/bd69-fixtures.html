@@ -3,9 +3,11 @@
     <bd69-header [title]="headerTitle"></bd69-header>
 
     <div class="main-content">
-        <bd69-dropdown [title]="dropdownTitle" [items]="leagues" [currentIndex]="currentIndex" (itemChosen)="onChooseLeague($event)"></bd69-dropdown>
-        <div class="content-item" style="height: 200px;">
-            <bd69-fixtures></bd69-fixtures>
+        <bd69-dropdown [parentSubject]="parentSubject" (itemChosen)="onChooseLeague($event)"></bd69-dropdown>
+        <div>
+            <div class="content-item" *ngFor="let fixtures of viewFixtures">
+                <bd69-fixtures [fixtures-title]="fixtures.name" [league-id]="fixtures.id"></bd69-fixtures>
+            </div>
         </div>
     </div>
 

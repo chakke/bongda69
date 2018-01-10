@@ -38,4 +38,3 @@ export class Match extends FirebaseObject {
     /**Trạng thái của trận đấu */
     state: number;
 }
-

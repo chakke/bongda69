@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Events } from 'ionic-angular';
 
-import { AppControllerProvider } from '../providers/bongda69/app-controller';
+import { Bd69Module } from '../providers/bongda69/bd69-module';
 
 import { User } from '../providers/base/classes/user';
 import { Observable } from 'rxjs/Observable';
@@ -22,7 +22,8 @@ export class MyApp {
     { id: 2, icon: 'bd69-livescore', component: "Bd69FixturesPage" },
     { id: 3, icon: 'bd69-leaderboard', component: "Bd69LeaguePage" },
     { id: 4, icon: 'bd69-bookmark', component: "Bd69FavoritesPage" },
-    { id: 5, icon: 'bd69-personal', component: "Bd69UserProfilePage" },
+    { id: 5, icon: 'bd69-notification', component: "Bd69NotificationPage" },
+    { id: 6, icon: 'bd69-setting', component: "Bd69SettingsPage" },
   ];;
 
   user: Observable<User>;
@@ -32,7 +33,7 @@ export class MyApp {
     platform: Platform,
     public menu: MenuController,
     statusBar: StatusBar,
-    public mAppControllerProvider: AppControllerProvider,
+    public mBd69Module: Bd69Module,
     splashScreen: SplashScreen) {
     platform.ready().then(() => {
       statusBar.styleDefault();
@@ -41,7 +42,7 @@ export class MyApp {
 
     // set our app's pages
 
-    this.user = this.mAppControllerProvider.getUser();
+    this.user = this.mBd69Module.getUser();
     console.log(this.user);
     
 

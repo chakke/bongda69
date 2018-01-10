@@ -1,6 +1,6 @@
 import { Component,Input } from '@angular/core';
 
-import { AppControllerProvider } from "../../providers/bongda69/app-controller";
+import { Bd69Module } from "../../providers/bongda69/bd69-module";
 import { Stadium } from "../../providers/bongda69/classes/stadium";
 import { Observable } from 'rxjs/Observable';
 
@@ -13,7 +13,7 @@ export class Bd69NewsLocationListComponent {
   
   mStadium: Observable<Stadium[]>;
   constructor(
-    public mAppController: AppControllerProvider
+    public mAppController: Bd69Module
   ) {
   }
 
