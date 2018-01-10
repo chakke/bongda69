@@ -9,8 +9,10 @@ export class Bd69HeaderElementComponent {
   @Input('title') headerTitle = "";
   @Input('rightText') rightText = "";
   @Input('isToggle') isToggle: boolean = false;
+  @Input('iconRight') iconRight = ""
+
   @Output() rightBtnClicked = new EventEmitter();
-  leftText = "Hủy";
+  // leftText = "Hủy";
 
   constructor(public mNavController: NavController) {
   }

@@ -1,18 +1,16 @@
 <div class="header-container a3-container a3-justify-between a3-items-center">
-    <div padding class="left-text" (click)="onClickClose()">
-        <!-- <span>{{leftText}}</span> -->
-        <button>
-            <ion-icon name="arow-left"></ion-icon>
-        </button>
+    <div padding class="icon-container-left a3-container a3-items-center" (click)="onClickClose()">
+        <ion-icon class="a1-relative" name="ios-arrow-round-back-outline">
+            <!-- <div class="red-dot"></div> -->
+        </ion-icon>
     </div>
     <div padding class="title-container">
         <span>{{headerTitle}}</span>
     </div>
-    <div padding *ngIf="!isToggle" class="right-text" (click)="onClickRightBtn()">
-        <!-- <span>{{rightText}}</span> -->
-        <button>
-            <ion-icon name="arrow-right"></ion-icon>
-        </button>
+    <div *ngIf="!isToggle" class="icon-container-right a3-container a3-items-center" (click)="onClickRightBtn()">
+        <ion-icon class="a1-relative" [name]="iconRight">
+            <!-- <div class="red-dot"></div> -->
+        </ion-icon>
     </div>
     <!-- fix me -->
     <div padding *ngIf="isToggle">
