@@ -24,4 +24,8 @@ export class Bd69NewsFeedPage {
   onClickCs(){
     this.navCtrl.push("NewsLocationPage");
   }
+
+  onClickDsdb(){
+    this.navCtrl.push("Bd69ListClubsPage")
+  }
 }

@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -7,11 +7,14 @@ import { Component,Input } from '@angular/core';
 })
 export class Bd69LeaguesComponent {
   @Input('list-league') list_league= [];
-  text: string;
+  @Output() itemChooser = new EventEmitter();
 
   constructor() {
-    console.log('Hello Bd69LeaguesComponent Component');
-    this.text = 'Hello World';
+
+  }
+
+  onClickItem(item){
+    this.itemChooser.emit({"item": item});
   }
 
 }

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Events, Content } from 'ionic-angular';
 
 import { FirebaseServiceProvider } from "../../providers/firebase-service/firebase-service";
 
@@ -9,11 +9,12 @@ import { FirebaseServiceProvider } from "../../providers/firebase-service/fireba
   templateUrl: 'bd69-league.html',
 })
 export class Bd69LeaguePage {
+  @ViewChild(Content) content: Content;
 
   headerTitle = "Thông tin giải đấu";
   search_icon = "ios-search-outline";
 
-  item : string = "aaa";
+  item: string = "aaa";
 
   listLeague: any = [
     {
@@ -105,52 +106,107 @@ export class Bd69LeaguePage {
       logo: "/assets/icon/favorite/club4.png",
       name: "Yên Thành Open 2017",
       club: []
-    },{
+    }, {
       id: "hel2017",
       logo: "/assets/icon/favorite/club3.png",
       name: "FORUMBONGDA RESPECT 2017",
       club: []
-    },{
+    }, {
       id: "hel2017",
       logo: "/assets/icon/favorite/club4.png",
       name: "KV3 - Vòng loại giải vô địch sân 7 Hà Nội",
       club: []
-    },{
+    }, {
       id: "hel2017",
       logo: "/assets/icon/favorite/club3.png",
       name: "Cup 93 - 96 HN",
       club: []
-    },{
+    }, {
       id: "hel2017",
       logo: "/assets/icon/favorite/club1.png",
       name: "Vinh Phuc League S1",
       club: []
-    },{
+    }, {
       id: "hel2017",
       logo: "/assets/icon/favorite/club2.png",
       name: "Yên Thành Open 2017",
       club: []
-    },{
+    }, {
       id: "hel2017",
       logo: "/assets/icon/favorite/club1.png",
       name: "FORUMBONGDA RESPECT 2017",
       club: []
-    },{
+    }, {
       id: "hel2017",
       logo: "/assets/icon/favorite/club2.png",
       name: "Liên Minh Cup 2018",
       club: []
-    },{
+    }, {
       id: "hel2017",
       logo: "/assets/icon/favorite/club1.png",
       name: "Yên Thành Open 2017",
       club: []
-    },{
+    }, {
       id: "hel2017",
       logo: "/assets/icon/favorite/club2.png",
       name: "FORUMBONGDA RESPECT 2017",
       club: []
-    },{
+    }, {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club2.png",
+      name: "FORUMBONGDA RESPECT 2018",
+      club: []
+    }, {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club4.png",
+      name: "Yên Thành Open 2017",
+      club: []
+    }, {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club3.png",
+      name: "FORUMBONGDA RESPECT 2017",
+      club: []
+    }, {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club4.png",
+      name: "KV3 - Vòng loại giải vô địch sân 7 Hà Nội",
+      club: []
+    }, {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club3.png",
+      name: "Cup 93 - 96 HN",
+      club: []
+    }, {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club1.png",
+      name: "Vinh Phuc League S1",
+      club: []
+    }, {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club2.png",
+      name: "Yên Thành Open 2017",
+      club: []
+    }, {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club1.png",
+      name: "FORUMBONGDA RESPECT 2017",
+      club: []
+    }, {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club2.png",
+      name: "Liên Minh Cup 2018",
+      club: []
+    }, {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club1.png",
+      name: "Yên Thành Open 2017",
+      club: []
+    }, {
+      id: "hel2017",
+      logo: "/assets/icon/favorite/club2.png",
+      name: "FORUMBONGDA RESPECT 2017",
+      club: []
+    }, {
       id: "hel2017",
       logo: "/assets/icon/favorite/club2.png",
       name: "FORUMBONGDA RESPECT 2018",
@@ -158,6 +214,8 @@ export class Bd69LeaguePage {
     },
   ]
   listLeagues: any;
+
+  isShow: boolean = false;
 
 
   constructor(
@@ -172,28 +230,61 @@ export class Bd69LeaguePage {
   ionViewDidEnter() {
     this.mEvents.publish("menu:changed", "Bd69LeaguePage");
     this.item = this.listLeague[0];
+
   }
 
 
-  
-  notifyChildren(item: any ){
+
+  notifyChildren(item: any) {
   }
 
+  onClickDetail(item) {
+    console.log(item);
+  }
+  requestObject: any;
+  onClickScrollToTop() {
+    let scrolling = document.getElementById("scrolling");
+    scrolling.scrollTop = 0;    
+    
+    
+    // return new Promise((resolve, reject) => {
+    //   let elm = document.querySelector(" .main-content");
+    //   if (elm.scrollTop <= 50) {
+    //     elm.scrollTop = 0;
+    //     if (this.requestObject) {
+    //       cancelAnimationFrame(this.requestObject);
+    //     }
+    //     resolve();
+    //   }
+    //   else {
+    //     elm.scrollTop -= elm.scrollTop / 2;
 
-  // getLeague() {
-  //   let listLeague;
-  //   let league = this.mFirebaseService.getCollection("tables").snapshotChanges().subscribe(data => {
-  //     listLeague = data.map(item => {
-  //       return {
-  //         id: item.payload.doc.id,
-  //         name: item.payload.doc.data().league_name,
-  //         page: "Bd69TableDetailPage"
-  //       }
-  //     });
-  //   });
-  //   setTimeout(() => {
-  //     this.listLeagues = listLeague;
-  //   }, 1000);
+    //     this.requestObject = requestAnimationFrame(() => {
+    //       this.onClickScrollToTop();
+    //     });
+    //   }
+    // })
+  }
 
-  // }
+  onScroll() {
+    let scrolling = document.getElementById("scrolling");
+    let height = this.content.contentHeight;
+    if(scrolling){
+      let scrollSize = scrolling.scrollTop;
+      if(scrollSize > 0.5 * height){
+        this.isShow = true;
+      }else{
+        this.isShow = false;
+      }
+    }
+  }
+  doRefresh(refresher){
+    setTimeout(() => {
+      refresher.complete();
+    }, 1000);
+  }
+
+  onClickHeader() {
+
+  }
 }

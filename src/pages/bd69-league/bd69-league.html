@@ -1,9 +1,17 @@
-<ion-content no-bounce class="gray-background">
+<ion-content no-bounce class="gray-background" id="scrollList">
 
-    <bd69-header [title]="headerTitle" [button-right]="search_icon"></bd69-header>
+    <bd69-header [title]="headerTitle" [button-right]="search_icon" (headerClicked)="onClickScrollToTop()"></bd69-header>
 
-    <div class="main-content">
-        <bd69-leagues [list-league]="listLeague"></bd69-leagues>
+    <div id="scrolling" class="main-content" (scroll)="onScroll()">
+        <bd69-leagues [list-league]="listLeague" (itemChooser)="onClickDetail($event)"></bd69-leagues>
+
+        <ion-fab *ngIf="isShow" bottom right>
+            <button class="button-up" (click)="onClickScrollToTop()">
+                <ion-icon name="arrow-up"></ion-icon>
+            </button>
+        </ion-fab>
     </div>
+
+
 
 </ion-content>
